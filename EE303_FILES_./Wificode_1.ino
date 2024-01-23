@@ -9,8 +9,8 @@
 
 // wifi details
 WiFiClient client;
-char ssid[] = "NETGEAR65";
-char password[] = "freshbird648";
+char ssid[] = "NETGEAR63";
+char password[] = "littlecello367";
 String postBody;
 String position;
 char server[] = "3.250.38.184"; 
@@ -26,28 +26,30 @@ String _send;
 
 void setup() {
   Serial.begin(9600);
-  delay(1000);
   connectToWiFi();
+  delay(500);
   // send post request and headers
-  postBody = "position=";
-  position = "0";
-  postBody += position;
-
+  postBody = "position=0";
+  //position = "0";
+  //postBody += position;
+ if(connect() == true){
 // send post body
+  client.println("POST /api/arrived/kltg2568 HTTP/1.1");  
+  client.println("Content-Type: application/x-www-form-urlencoded");
+  client.print("Content-Length: ");
+  client.println(postBody.length());
+  Serial.println("test" + postBody);
+  client.println();
   client.println(postBody);
+  
+ }
+
 }
 
 void loop(){
   
-  client.println("POST /api/arrived/kltg2668/1.1");  
-  client.println("Content-Type: application/x-www-form-urlencoded");
-  client.print("Content-Length: ");
-  client.println(postBody.length());
-  client.println("Connection: close");
-  client.println();
-
+  Serial.println("in loop" );
    // send post body
-   client.println(postBody);
    _read = readResponse();
    _send = getResponseBody(_read);
    Serial.println(_send);
