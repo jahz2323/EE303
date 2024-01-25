@@ -9,12 +9,14 @@
 
 // wifi details
 WiFiClient client;
-char ssid[] = "NETGEAR63";
-char password[] = "littlecello367";
+char ssid[] = "NETGEAR65";
+char password[] = "freshbird648";
 String postBody;
 String position;
 char server[] = "3.250.38.184"; 
 int port = 8000;
+
+
 //remote control config 
 int x; 
 int y;
@@ -24,32 +26,40 @@ int z;
 String _read;
 String _send; 
 
+int dest;
+int statusCode = getStatusCode(_read);
+int target; 
+
+
 void setup() {
   Serial.begin(9600);
+  delay(1000);
   connectToWiFi();
-  delay(500);
   // send post request and headers
-  postBody = "position=0";
-  //position = "0";
-  //postBody += position;
- if(connect() == true){
-// send post body
-  client.println("POST /api/arrived/kltg2568 HTTP/1.1");  
-  client.println("Content-Type: application/x-www-form-urlencoded");
-  client.print("Content-Length: ");
-  client.println(postBody.length());
-  Serial.println("test" + postBody);
-  client.println();
-  client.println(postBody);
-  
- }
+  postBody = "position=";
+  position = "0";
+  postBody += position;
 
+// send post body
+  client.println(postBody);
 }
 
 void loop(){
   
-  Serial.println("in loop" );
+  client.println("POST /api/arrived/kltg2668/1.1");  
+  client.println("Content-Type: application/x-www-form-urlencoded");
+  client.print("Content-Length: ");
+  client.println(postBody.length());
+  client.println("Connection: close");
+  client.println();
+//%%%%%%%%%%%%%%%%%%%
    // send post body
+    if(statusCode == 200){
+     String body = getResponseBody(_read); 
+     target = body.toInt(); 
+    }
+   Serial.println("Next position =:" + target); 
+   client.println(postBody);
    _read = readResponse();
    _send = getResponseBody(_read);
    Serial.println(_send);
@@ -76,6 +86,10 @@ bool connect() {
     return true;
 }
 
+int getStatusCode(String& response){
+  String code = response.substring(9,12); 
+  return code.toInt();
+}
 String readResponse() {
   char buffer[BUFSIZE];
   memset(buffer, 0, BUFSIZE);
@@ -89,6 +103,7 @@ String getResponseBody(String& response) {
   body.trim();
   return body;
 }
+
 
 void connectToWiFi() {
   Serial.print("Connecting to network: ");
@@ -105,7 +120,7 @@ void connectToWiFi() {
   Serial.flush();
 
   while (WiFi.localIP() == INADDR_NONE) {
-  Serial.print(".");
+  Serial.print(".t");
   Serial.flush();
   delay(300);
 }
