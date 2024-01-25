@@ -1,14 +1,19 @@
-//routes 
+//routes
+class Routing_Algorithm{ 
 public :
+
+volatile int active = 0; 
+volatile int orientation = 0; 
 int counter; 
-int target; 
+ 
+
 private :
 int v; 
 int w;
 int edges;
-int [][] adj; 
-bool[] visited; 
-
+boolean adj[][]; 
+boolean visited[]; 
+};
 void addEdge(int v, int w){
   adj[v][w] = true;
   edges++;
@@ -16,110 +21,48 @@ void addEdge(int v, int w){
 
 void setup() {
   // put your setup code here, to run once:
-  
+  // create graph
 }
+// position will update when reach new station 
 
 void loop() {
-    
+    v = position;
 
   // put your main code here, to run repeatedly: 
   switch (position){
-  
-  case : "0"){
-    visited[v] = true; 
-    if(!visited[w]){
+  visited[v] = true; 
+  case : 0{
+    if(!visited[target]){
     if(target == "2"){
         // rotate orientation forward at junction 
         counter++;
         addEdge(target,position);
+        rotate();
+        // forward();
+        oritentation = 1; 
+        active  = 1; 
       }
     if(target == "1"){
       // rotate orientation turn left at junction 
       counter++;
+      addEdge(target,position);
+      orientation = 1;
+      active  = 1;
       }
     if(target == "4"){
       // forward
       counter++; 
+      addEdge(target,position);
+      active = 1 ; 
       }
     }
+    position = target; 
     break;
   }
   
-  case :"1"{
-    
-  
-    if(target == "0"){
-        // rotate orientation and turn right  
-        counter++;
-    }
-    if(target == "2"){
-      // rotate orientation turn left at junction 
-      counter++;
-    }
-    if(target == "4"){
-      // turn left and follow line 
-      counter++;
-    }
-    if(target == "3"){
-      // turn right and follow   
-      counter++;
-    }
-    break;
-  }
-  
-  case : "2"{
-    if(target == "1"){
-        // rotate orientation and turn right  
-        counter++;
-      }
-    
-    if(target == "0"){
-      // rotate orientation turn and follow line 
-      counter++;
-    }
-    if(target == "3"){
-      // forward 
-      counter++;
-    }
-    break;
-  }
-  
-  case : "3"{
-    if(target == "1"){
-        // follow line and turn left at junction 
-        counter++;
-      }
-    
-    if(target == "2"){
-      // rotate orientation turn and forward 
-      counter++;
-    }
-    if(target == "4"){
-      // follow line and do not turn at junction 
-      counter++;
-    }
-    break;
-  }
-  
-  case :"4"{
-    if(target == "0"){
-        // rotate orientation and forward 
-        counter++;
-      }
-    
-    if(target == "1"){
-      // followline and turn at junction 
-      counter++;
-    }
-    if(target == "3"){
-      // follow line and do not turn at junction 
-      counter++;
-    }
-    break; 
-  }
-  
+ 
   default:{
-    forward 
+   // forward 
   }
   
 }
