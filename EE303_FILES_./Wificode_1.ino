@@ -23,48 +23,47 @@ int z;
 //responses 
 String _read;
 String _send; 
+int target; 
 
 void setup() {
   Serial.begin(9600);
   connectToWiFi();
-  delay(500);
+  delay(200);
   // send post request and headers
-  postBody = "position=0";
+  postBody = "position=1";
   //position = "0";
-  //postBody += position;
+  postBody += position;
  if(connect() == true){
 // send post body
   client.println("POST /api/arrived/kltg2568 HTTP/1.1");  
   client.println("Content-Type: application/x-www-form-urlencoded");
   client.print("Content-Length: ");
   client.println(postBody.length());
-  Serial.println("test" + postBody);
+  Serial.println("-> " + postBody);
   client.println();
   client.println(postBody);
-  
  }
-
+  delay(500);
 }
 
 void loop(){
   
-  Serial.println("in loop" );
-   // send post body
-   _read = readResponse();
-   _send = getResponseBody(_read);
-   Serial.println(_send);
-   client.stop();
-   position = _send;
-   postBody = "position=";
-   postBody += position;
-   if(position!="undefined"){
-    // normal function
-  }
-  else{
-    // stop code
-    while (1) {}
-    }
-  }
+//Serial.println("NOW IN LOOP" );
+int statusCode = getStatusCode(_read);
+  
+    
+     // send post body
+  _read = readResponse();
+  _send = getResponseBody(_read);
+  String body = getResponseBody(_read);
+ 
+  Serial.println();
+  Serial.println(_send);
+  position = _read;
+  postBody = "position=";
+  postBody += position;
+// check if at final destination
+}
 
 bool connect() {
   Serial.println("Connecting to server");
@@ -74,6 +73,10 @@ bool connect() {
     }
     Serial.println("Connected to server");
     return true;
+}
+int getStatusCode(String& response) {
+String code = response.substring(9, 12);
+return code.toInt();
 }
 
 String readResponse() {
