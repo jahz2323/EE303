@@ -26,7 +26,8 @@ void loop() {
         Serial.println("CASE 0");
         //Serial.println(destination);
 
-        if (destination == 1) {
+        if (destination == 1)
+        {
           Serial.println("GOTO 1");
 
           digitalWrite(motor1Phase, LOW); //forward
@@ -42,17 +43,15 @@ void loop() {
             analogWrite(motor1PWM, 90); // set speed of motor
             analogWrite(motor2PWM, 0); // set speed of motor
             delay(500);
-
           }
-
           //Serial.println(station);
-          if (_move = 2) {
+          if (_move = 2)
+          {
             Serial.println("UPDATED POSITION");
-            
           }
         }
-
-        else if (destination == 4) {
+        else if (destination == 4)
+        {
           // forward
           active = 1;
           if (station = 1)
@@ -62,20 +61,64 @@ void loop() {
             //            postBody = "position=";
             //            postBody += 4;
             //            client.println(postBody);
-            delay(6000);
+            delay(500);
+          }
+        }
+        else if (destination == 2)
+        // Continue after first junction 
+        {
+          digitalWrite(motor1Phase, LOW); //forward
+          digitalWrite(motor2Phase, HIGH); //forward
+          analogWrite(motor1PWM, 150); // set speed of motor
+          analogWrite(motor2PWM, 150); // set speed of motor
+          delay(100);
+          active = 1;
+          if (station = 1)
+          {
+            active = 1;
+          }
+          if (_move = 2)
+          {
+            Serial.println("UPDATED POSITION");
+            active = 0;
+          }
+        }
+        JP = true;
+        break;
+      }
+
+    case 1: {
+        Serial.println("Now at 1....");
+        active = 1;
+        if (destination == 4) {
+          active = 1;
+          if (station = 1)
+          {
+            digitalWrite(motor1Phase, HIGH); //forward
+            digitalWrite(motor2Phase, HIGH); //forward
+            analogWrite(motor1PWM, 90); // set speed of motor
+            analogWrite(motor2PWM, 0); // set speed of motor
+            delay(500);
             _position = 4;
           }
-
         }
-      }
-      break;
-    case 1: {
-        Serial.println("_SEND= 1");
-        active = 1;
+        if (destination == 3) {
+          active = 1;
+          if (station = 1)
+          {
+            digitalWrite(motor1Phase, HIGH); //forward
+            digitalWrite(motor2Phase, HIGH); //forward
+            analogWrite(motor1PWM, 0); // set speed of motor
+            analogWrite(motor2PWM, 90); // set speed of motor
+            delay(500);
+            _position = 3;
+          }
+        }
+        JP = true;
         break;
       }
     case 4: {
-        Serial.println("_SEND= 4");
+        Serial.println("Now at 4...");
         active = 1;
         break;
       }
