@@ -18,6 +18,7 @@ int _position;
 char server[] = "3.250.38.184";
 int port = 8000;
 
+bool JP = false; 
 int destination;
 //responses
 
@@ -55,6 +56,7 @@ void loop() {
     String body = getResponseBody(_read);
     // check if at final destination
     if (!body.equals("Finished")) {
+      if(JP = true){
       destination = body.toInt();
       postBody = "position=";
       position = String(destination);
@@ -69,6 +71,8 @@ void loop() {
         Serial.println("-> " + postBody);
         client.println();
         client.println(postBody);
+        JP = false; 
+      }
       
     }
   }
@@ -127,4 +131,3 @@ void connectToWiFi() {
   Serial.println();
   Serial.print("IP Address: ");
   Serial.println(WiFi.localIP());
-}
