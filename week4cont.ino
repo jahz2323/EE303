@@ -104,7 +104,6 @@ String readResponse() {
 }
 String getResponseBody(String& response) {
   int split = response.indexOf("\r\n\r\n");
-  Serial.println(response);
   String body = response.substring(split + 4, response.length());
   body.trim();
   return body;
