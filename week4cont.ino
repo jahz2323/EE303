@@ -1,4 +1,3 @@
-// keep A8 free for tone O/P music
 #define BUFSIZE 512
 #include <SLFS.h>
 #include <WiFiClient.h>
@@ -34,7 +33,7 @@ void setup() {
   postBody += position;
   if (connect() == true) {
     // send post body
-    client.println("POST /api/arrived/kltg2568 HTTP/1.1");
+    client.println("GET /api/getRoute/kltg2568 HTTP/1.1");
     client.println("Content-Type: application/x-www-form-urlencoded");
     client.print("Content-Length: ");
     client.println(postBody.length());
@@ -64,7 +63,7 @@ void loop() {
       Serial.println("Postbody ="+ postBody);
       
         // send post body
-        client.println("POST /api/arrived/kltg2568 HTTP/1.1");
+        client.println("POST /api/arrived/TEAM-ID HTTP/1.1");
         client.println("Content-Type: application/x-www-form-urlencoded");
         client.print("Content-Length: ");
         client.println(postBody.length());
@@ -100,10 +99,12 @@ String readResponse() {
   memset(buffer, 0, BUFSIZE);
   client.readBytes(buffer, BUFSIZE);
   String response(buffer);
+  Serial.println(response);
   return response;
 }
 String getResponseBody(String& response) {
   int split = response.indexOf("\r\n\r\n");
+  Serial.println(response);
   String body = response.substring(split + 4, response.length());
   body.trim();
   return body;
@@ -130,4 +131,4 @@ void connectToWiFi() {
   }
   Serial.println();
   Serial.print("IP Address: ");
-  Serial.println(WiFi.localIP());
+  Serial.println(WiFi.localIP());}
