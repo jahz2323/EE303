@@ -1,0 +1,64 @@
+void setup() {
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+
+
+}
+
+void routing(int destination) {
+  int previous;
+  int current;
+
+  switch (destination) {
+    case 1:
+      if (current == 0) {
+        if (previous == 1 || 2 || 3) {
+          //rotate 180
+          //juction B turn left
+          //junction 1
+          //junction()
+        }
+        else {
+          //move forward
+          //juction B turn left
+          //junction 1
+          //junction()
+        }
+      }
+      if (current == 2) {
+        if (previous == 0 || 1 || 4) {
+          //rotate 180
+          //juction B turn right
+          //junction 1
+          //junction()
+        }
+        else  {
+          //move forward
+          //juction B turn right
+          //junction 1
+          //junction()
+        }
+      }
+      if (current == 3) {
+        if (previous == 0 || 1 || 2 || 4) {
+          //rotate 180
+          //junction 2
+          //juction B turn left
+          //junction 1
+          //junction()
+        }
+      }
+      if (current == 4) {
+        if (previous == 0 || 1 || 2 || 3) {
+          //rotate 180
+          //junction 0
+          //juction B turn right
+          //junction 1
+          //junction()
+        }
+      }
+  }
+}
