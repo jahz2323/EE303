@@ -13,16 +13,60 @@ void routing(int destination) {
   int current;
 
   switch (destination) {
+    case 0:
+      if (current == 1) {
+        if (previous == 1 || 2 || 3) {
+          //rotate 180()
+          //move()
+          //juction B turn right
+          //junction 0
+          //junction()
+        }
+      }
+      if (current == 2) {
+        if (previous == 0 || 1 || 4) {
+          //rotate 180()
+          //move()
+          //juction B
+          //junction 0
+          //junction()
+        }
+        else  {
+          //move()
+          //juction B
+          //junction 0
+          //junction()
+        }
+      }
+      if (current == 3) {
+        if (previous == 0 || 1 || 2 || 4) {
+          //rotate 180()
+          //move()
+          //junction 2
+          //juction B
+          //junction 0
+          //junction()
+        }
+      }
+      if (current == 4) {
+        if (previous == 0 || 1 || 2 || 3) {
+          //rotate 180()
+          //move()
+          //junction 0
+          //junction()
+        }
+      }
     case 1:
       if (current == 0) {
         if (previous == 1 || 2 || 3) {
-          //rotate 180
+          //rotate 180()
+          //move()
           //juction B turn left
           //junction 1
           //junction()
         }
         else {
-          //move forward
+          //move()
           //juction B turn left
           //junction 1
           //junction()
@@ -30,13 +74,14 @@ void routing(int destination) {
       }
       if (current == 2) {
         if (previous == 0 || 1 || 4) {
-          //rotate 180
+          //rotate 180()
+          //move()
           //juction B turn right
           //junction 1
           //junction()
         }
         else  {
-          //move forward
+          //move()
           //juction B turn right
           //junction 1
           //junction()
@@ -44,7 +89,8 @@ void routing(int destination) {
       }
       if (current == 3) {
         if (previous == 0 || 1 || 2 || 4) {
-          //rotate 180
+          //rotate 180()
+          //move()
           //junction 2
           //juction B turn left
           //junction 1
@@ -53,10 +99,237 @@ void routing(int destination) {
       }
       if (current == 4) {
         if (previous == 0 || 1 || 2 || 3) {
-          //rotate 180
+          //rotate 180()
+          //move()
           //junction 0
           //juction B turn right
           //junction 1
+          //junction()
+        }
+      }
+          case 2:
+      if (current == 0) {
+        if (previous == 1 || 2 || 3) {
+          //rotate 180()
+          //move()
+          //juction B
+          //junction 2
+          //junction()
+        }
+        else {
+          //move()
+          //juction B
+          //junction 2
+          //junction()
+        }
+      }
+      if (current == 1) {
+        if (previous == 0 || 2 || 3 || 4) {
+          //rotate 180()
+          //move()
+          //juction B turn left
+          //junction 2
+          //junction()
+        }
+      }
+      if (current == 3) {
+        if (previous == 0 || 1 || 2 || 4) {
+          //rotate 180()
+          //move()
+          //junction 2
+          //junction()
+        }
+      }
+      if (current == 4) {
+        if (previous == 0 || 1 || 2 || 3) {
+          //rotate 180()
+          //move()
+          //junction 0
+          //juction B
+          //junction 2
+          //junction()
+        }
+      }
+          case 3:
+      if (current == 0) {
+        if (previous == 1 || 2 || 3) {
+          //rotate 180()
+          //move()
+          //juction B
+          //junction 2
+          //junction 3
+          //junction()
+        }
+        else {
+          //move()
+          //juction B
+          //junction 2
+          //junction 3
+          //junction()
+        }
+      }
+      if (current == 1) {
+        if (previous == 0 || 2 || 3 || 4) {
+          //rotate 180()
+          //move()
+          //juction B turn left
+          //junction 2
+          //junction 3
+          //junction()
+        }
+      if (current == 2) {
+        if (previous == 0 || 1 || 4) {
+          //move()
+          //junction 3
+          //junction()
+        }
+        else  {
+          //rotate 180()
+          //move()
+          //junction 3
+          //junction()
+        }
+      }
+      if (current == 4) {
+        if (previous == 0 || 1 || 2 || 3) {
+          //rotate 180()
+          //move()
+          //junction 0
+          //juction B
+          //junction 2
+          //junction 3
+          //junction()
+        }
+      }
+      }
+          case 4:
+      if (current == 0) {
+        if (previous == 1 || 2 || 3) {
+          //move()
+          //junction 4
+          //junction()
+        }
+        else {
+          //rotate 180()
+          //move()
+          //junction 4
+          //junction()
+        }
+      }
+      if (current == 1) {
+        if (previous == 0 || 2 || 3 || 4) {
+          //rotate 180()
+          //move()
+          //juction B turn right
+          //junction 0
+          //junction 4
+          //junction()
+        }
+      }
+      if (current == 2) {
+        if (previous == 0 || 1 || 4) {
+          //rotate 180()
+          //move()
+          //junction B
+          //juction 0
+          //junction 4
+          //junction()
+        }
+        else {
+          //move()
+          //junction B
+          //juction 0
+          //junction 4
+          //junction()
+        }
+      }
+      if (current == 3) {
+        if (previous == 0 || 1 || 2 || 4) {
+          //rotate 180()
+          //move()
+          //junction 2
+          //juction B
+          //junction 0
+          //junction 4
+          //junction()
+        }
+      }
+      case 5:
+      if (current == 0) {
+        if (previous == 1 || 2 || 3) {
+          //rotate 180()
+          //move()
+          //junction B turn left
+          //junction 1
+          //junction A
+          //move forward()
+          //junction 5
+          //junction()
+        }
+        else {
+          //move()
+          //junction B turn left
+          //junction 1
+          //junction A
+          //move forward()
+          //junction 5
+          //junction()
+        }
+      }
+      if (current == 1) {
+        if (previous == 0 || 2 || 3 || 4) {
+          //rotate 180()
+          //move()
+          //junction A
+          //move forward()
+          //junction 5
+          //junction()
+        }
+      }
+      if (current == 2) {
+        if (previous == 0 || 1 || 4) {
+          //rotate 180()
+          //move()
+          //junction B turn right
+          //juction 1
+          //junction A
+          //move forward()
+          //junction 5
+          //junction()
+        }
+        else {
+          //move()
+          //junction B turn right
+          //juction 1
+          //junction A
+          //move forward()
+          //junction 5
+          //junction()
+        }
+      }
+      if (current == 3) {
+        if (previous == 0 || 1 || 2 || 4) {
+          //rotate 180()
+          //move()
+          //junction 2
+          //juction B turn right
+          //juction 1
+          //junction A
+          //move forward()
+          //junction 5
+          //junction()
+        }
+      }
+      if (current == 4) {
+        if (previous == 0 || 1 || 2 || 4) {
+          //rotate 180()
+          //move()
+          //junction 0
+          //juction B turn left
+          //juction 1
+          //junction A
+          //move forward()
+          //junction 5
           //junction()
         }
       }
