@@ -1,0 +1,366 @@
+int previous = 6;
+int current = 0;
+
+void setup() {
+  Serial.begin(9600);
+  delay(20000);
+  String response = readResponse();
+  String route = getRoute(response);
+  Serial.println("Route is..." + route);
+}
+
+void loop() {
+
+}
+
+void post() {
+  if (previous = 6) {
+    Serial.println("Test");
+    POST_position(0);
+    int destination = Read_Response();
+    Serial.println("destination is...." + destination);
+  }
+  else {
+    previous = current;
+    current = destination;
+    Serial.println("Test");
+    POST_position(0);
+    int destination = Read_Response();
+    Serial.println("destination is...." + destination);
+  }
+}
+
+void junction() {
+  junctionCount += 1;
+}
+
+void routing(int destination) {
+  switch (destination) {
+    case 0:
+      if (current == 1) {
+        if (previous == 1 || 2 || 3) {
+          180_turn();
+          if (junctionCount == 1) {
+            right_angle_turn();
+          }
+          if (junctionCount == 2) {
+            post();
+          }
+        }
+      }
+      if (current == 2) {
+        if (previous == 0 || 1 || 4) {
+          180_turn();
+          if (junctionCount == 2) {
+            post();
+          }
+        }
+        else if (previous == 3)  {
+          if (junctionCount == 2) {
+            post();
+          }
+        }
+      }
+      if (current == 3) {
+        if (previous == 0 || 1 || 2 || 4) {
+          180_turn();
+          if (junctionCount == 3) {
+            post();
+          }
+        }
+      }
+      if (current == 4) {
+        if (previous == 0 || 1 || 2 || 3) {
+          180_turn();
+          if (junctionCount == 1) {
+            post();
+          }
+        }
+      }
+    case 1:
+      if (current == 0) {
+        if (previous == 1 || 2 || 3) {
+          180_turn();
+          if (junctionCount == 1) {
+            left_angle_turn();
+          }
+          if (junctionCount == 2) {
+            post();
+          }
+        }
+        else if (previous == 6 || 4) {
+          if (junctionCount == 1) {
+            left_angle_turn();
+          }
+          if (junctionCount == 2) {
+            post();
+          }
+
+        }
+      }
+      if (current == 2) {
+        if (previous == 0 || 1 || 4) {
+          180_turn();
+          if (junctionCount == 1) {
+            right_angle_turn();
+          }
+          if (junctionCount == 2) {
+            post();
+          }
+        }
+        else if (previous == 3)  {
+          if (junctionCount == 1) {
+            right_angle_turn();
+          }
+          if (junctionCount == 2) {
+            post();
+          }
+        }
+      }
+      if (current == 3) {
+        if (previous == 0 || 1 || 2 || 4) {
+          180_turn();
+          if (junctionCount == 2) {
+            right_angle_turn();
+          }
+          if (junctionCount == 3) {
+            post();
+          }
+        }
+      }
+      if (current == 4) {
+        if (previous == 0 || 1 || 2 || 3) {
+          180_turn();
+          if (junctionCount == 2) {
+            left_angle_turn();
+          }
+          if (junctionCount == 3) {
+            post();
+          }
+        }
+      }
+    case 2:
+      if (current == 0) {
+        if (previous == 1 || 2 || 3) {
+          180_turn();
+          if (junctionCount == 2) {
+            post();
+          }
+        }
+        else if (previous == 6 || 4) {
+          if (junctionCount == 2) {
+            post();
+          }
+        }
+      }
+      if (current == 1) {
+        if (previous == 0 || 2 || 3 || 4) {
+          180_turn();
+          if (junctionCount == 1) {
+            left_angle_turn();
+          }
+          if (junctionCount == 2) {
+            post();
+          }
+        }
+      }
+      if (current == 3) {
+        if (previous == 0 || 1 || 2 || 4) {
+          180_turn();
+          if (junctionCount == 1) {
+            post();
+          }
+        }
+      }
+      if (current == 4) {
+        if (previous == 0 || 1 || 2 || 3) {
+          180_turn();
+          if (junctionCount == 3) {
+            post();
+          }
+        }
+      }
+    case 3:
+      if (current == 0) {
+        if (previous == 1 || 2 || 3) {
+          180_turn();
+          if (junctionCount == 3) {
+            post();
+          }
+        }
+        else if (previous == 6 || 4) {
+          if (junctionCount == 3) {
+            post();
+          }
+        }
+      }
+      if (current == 1) {
+        if (previous == 0 || 2 || 3 || 4) {
+          180_turn();
+          if (junctionCount == 1) {
+            left_angle_turn();
+          }
+          if (junctionCount == 3) {
+            post();
+          }
+        }
+        if (current == 2) {
+          if (previous == 0 || 1 || 4) {
+            if (junctionCount == 1) {
+              post();
+            }
+          }
+          else if (previous == 3)  {
+            180_turn();
+            if (junctionCount == 1) {
+              post();
+            }
+          }
+        }
+        if (current == 4) {
+          if (previous == 0 || 1 || 2 || 3) {
+            180_turn();
+            if (junctionCount == 4) {
+              post();
+            }
+          }
+        }
+      }
+    case 4:
+      if (current == 0) {
+        if (previous == 1 || 2 || 3) {
+          if (junctionCount == 1) {
+            post();
+          }
+        }
+        else if (previous == 6 || 4) {
+          180_turn();
+          if (junctionCount == 1) {
+            post();
+          }
+        }
+      }
+      if (current == 1) {
+        if (previous == 0 || 2 || 3 || 4) {
+          180_turn();
+          if (junctionCount == 1) {
+            right_angle_turn();
+          }
+          if (junctionCount == 3) {
+            post();
+          }
+        }
+      }
+      if (current == 2) {
+        if (previous == 0 || 1 || 4) {
+          180_turn();
+          if (junctionCount == 3) {
+            post();
+          }
+        }
+        else if (previous == 3) {
+          if (junctionCount == 3) {
+            post();
+          }
+        }
+      }
+      if (current == 3) {
+        if (previous == 0 || 1 || 2 || 4) {
+          180_turn();
+          if (junctionCount == 4) {
+            post();
+          }
+        }
+      }
+    case 5:
+      if (current == 0) {
+        if (previous == 1 || 2 || 3) {
+          180_turn();
+          if (junctionCount == 1) {
+            left_angle_turn();
+          }
+          if (junctionCount == 3) {
+            //move_to_five()
+          }
+          if (junctionCount == 4) {
+            post();
+          }
+        }
+        else if (previous == 6 || 4) {
+          if (junctionCount == 1) {
+            left_angle_turn();
+          }
+          if (junctionCount == 3) {
+            //move_to_five()
+          }
+          if (junctionCount == 4) {
+            post();
+          }
+        }
+      }
+      if (current == 1) {
+        if (previous == 0 || 2 || 3 || 4) {
+          180_turn();
+          if (junctionCount == 1) {
+            //move_to_five()
+          }
+          if (junctionCount == 2) {
+            post();
+          }
+        }
+      }
+      if (current == 2) {
+        if (previous == 0 || 1 || 4) {
+          180_turn();
+          if (junctionCount == 1) {
+            right_angle_turn();
+          }
+          if (junctionCount == 3) {
+            //move_to_five()
+          }
+          if (junctionCount == 4) {
+            post();
+          }
+        }
+        else if (previous == 3) {
+          if (junctionCount == 1) {
+            right_angle_turn();
+          }
+          if (junctionCount == 3) {
+            //move_to_five()
+          }
+          if (junctionCount == 4) {
+            post();
+          }
+        }
+      }
+      if (current == 3) {
+        if (previous == 0 || 1 || 2 || 4) {
+          180_turn();
+          if (junctionCount == 2) {
+            right_angle_turn();
+          }
+          if (junctionCount == 4) {
+            //move_to_five()
+          }
+          if (junctionCount == 5) {
+            post();
+          }
+        }
+      }
+      if (current == 4) {
+        if (previous == 0 || 1 || 2 || 4) {
+          180_turn();
+          if (junctionCount == 2) {
+            left_angle_turn();
+          }
+          if (junctionCount == 4) {
+            //move_to_five()
+          }
+          if (junctionCount == 5) {
+            post();
+          }
+        }
+      }
+  }
+}
