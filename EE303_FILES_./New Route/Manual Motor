@@ -1,0 +1,43 @@
+void setup() {
+  
+}
+
+void loop() {
+  
+}
+
+void 180_turn() {
+      digitalWrite(motor1Phase, LOW); //forward
+      digitalWrite(motor2Phase, HIGH); //forward
+      analogWrite(motor1PWM, 150); // set speed of motor
+      analogWrite(motor2PWM, 150); // set speed of motor
+      delay(100);
+      break;
+}
+
+void left_angle_turn() {
+      digitalWrite(motor1Phase, HIGH); //forward
+      digitalWrite(motor2Phase, HIGH); //forward
+      analogWrite(motor1PWM, 90); // set speed of motor
+      analogWrite(motor2PWM, 0); // set speed of motor
+      delay(500);
+      break;
+}
+
+void right_angle_turn() {
+      digitalWrite(motor1Phase, HIGH); //forward
+      digitalWrite(motor2Phase, HIGH); //forward
+      analogWrite(motor1PWM, 0); // set speed of motor
+      analogWrite(motor2PWM, 90); // set speed of motor
+      delay(500);
+      break;
+}
+
+void move_to_five() {
+      digitalWrite(motor1Phase, HIGH); //forward
+      digitalWrite(motor2Phase, HIGH); //forward
+      analogWrite(motor1PWM, 100); // set speed of motor
+      analogWrite(motor2PWM, 100); // set speed of motor
+      delay(2000);
+      break;
+}
