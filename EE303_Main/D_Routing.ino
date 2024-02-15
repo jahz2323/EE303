@@ -13,7 +13,7 @@ void setupdecehlo() {
 }
 
 void loopdechelo() {
-
+  test(destination);
 }
 
 void junction() {
@@ -23,7 +23,7 @@ void junction() {
   if (junctionCount == 1) {
     post();
   }
-  else{
+  else {
     test(destination);
   }
 }
@@ -35,131 +35,59 @@ void post() {
     int destination = Read_Response();
     Serial.print("     Destination is...");
     Serial.print(destination);
+
   }
-}
-bool test(int dest){
-  if(junctionCount == 2){
-    Serial.println(" left");
-    left_angle_turn();
-    //left turn 
-  }
-  if(junctionCount == 3){
-    Serial.println("FINISHED");
-    POST_position(1);
-    return true;
-  }
-  return false;
 }
 
-//
-//void routing(int destination) {
-//
-//  switch (destination) {
-//    case 0:
-//      if (current == 1) {
-//        if (previous == 1 || 2 || 3) {
-//          //rotate 180()
-//          //move()
-//          //juction B turn right
-//          //junction 0
-//          //junction()
-//        }
-//      }
-//      if (current == 2) {
-//        if (previous == 0 || 1 || 4) {
-//          //rotate 180()
-//          //move()
-//          //juction B
-//          //junction 0
-//          //junction()
-//        }
-//        else  {
-//          //move()
-//          //juction B
-//          //junction 0
-//          //junction()
-//        }
-//      }
-//      if (current == 3) {
-//        if (previous == 0 || 1 || 2 || 4) {
-//          //rotate 180()
-//          //move()
-//          //junction 2
-//          //juction B
-//          //junction 0
-//          //junction()
-//        }
-//      }
-//      if (current == 4) {
-//        if (previous == 0 || 1 || 2 || 3) {
-//          //rotate 180()
-//          //move()
-//          //junction 0
-//          //junction()
-//        }
-//      }
-//      //dest = 1
-//    case 1:
-//    Serial.println("  CASE 1");
-//    // current position 0
-//      if (current == 0) {
-//        if (previous == 1 || 2 || 3) {
-//          //rotate 180()
-//          //move()
-//          //juction B turn left
-//          //junction 1
-//          //junction()
-//        }
-//        // at junctions
-//        else {
-//           Serial.println(" JUNCTIONS");
-//          //move()
-//          //juction B turn left
-//          if(junctionCount = 2 ){
-//             Serial.println(" left");
-//              // left_angle_turn();
-//          }
-//          //junction 1
-//          //junction()
-//         if(junctionCount = 3){
-//          Serial.println("Finished");
-//         }
-//        }
-//      }
-//      if (current == 2) {
-//        if (previous == 0 || 1 || 4) {
-//          //rotate 180()
-//          //move()
-//          //juction B turn right
-//          //junction 1
-//          //junction()
-//        }
-//        else  {
-//          //move()
-//          //juction B turn right
-//          //junction 1
-//          //junction()
-//        }
-//      }
-//      if (current == 3) {
-//        if (previous == 0 || 1 || 2 || 4) {
-//          //rotate 180()
-//          //move()
-//          //junction 2
-//          //juction B turn left
-//          //junction 1
-//          //junction()
-//        }
-//      }
-//      if (current == 4) {
-//        if (previous == 0 || 1 || 2 || 3) {
-//          //rotate 180()
-//          //move()
-//          //junction 0
-//          //juction B turn right
-//          //junction 1
-//          //junction()
-//        }
-//      }
-//      }
-//  }
+  //spin_turn(){
+  //left_angle_turn() {
+  //right_angle_turn() {
+  //move_to_five() {
+  bool test(int dest) {
+    // FROM 0
+    if (previous == 6 && current == 0 && dest == 1) {
+      if (junctionCount == 2) {
+        Serial.println(" left");
+        left_angle_turn();
+        //left turn
+      }
+      if (junctionCount == 3) {
+        Serial.println("FINISHED");
+        POST_position(1);
+        current == 1;
+        junctionCount == 0;
+        return true;
+      }
+    }
+    else if ( previous == 6 && current == 0 && dest == 4) {
+      if (junctionCount == 1) {
+        spin_turn();
+      }
+      if (junctionCount == 2) {
+        POST_position(4);
+        current == 4;
+        junctionCount == 0;
+        return true;
+      }
+    }
+    else if ( previous == 6 && current == 0 && dest == 2) {
+      if (junctionCount == 3) {
+        POST_position(2);
+        current == 2;
+        junctionCount == 0;
+        return true;
+      }
+    }
+    else if ( previous == 6 && current == 0 && dest == 3) {
+      if (junctionCount == 4) {
+        POST_position(3);
+        current == 3;
+        junctionCount == 0;
+        return true;
+      }
+    }
+    //
+    //
+    //
+    return false;
+  }
