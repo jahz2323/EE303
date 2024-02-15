@@ -20,6 +20,7 @@ void loopdechelo() {
   distance = analogRead(A5);
   //  Serial.println("   ");
   //  Serial.print(distance);
+  test(destination);
 }
 
 void junction() {
@@ -52,7 +53,7 @@ void post() {
 }
 
 bool test(int dest) {
-    //PREVIOUS = NULL - CURRENT 0
+  //PREVIOUS = NULL - CURRENT 0
   if ( previous == 6 && current == 0 && destination == 1) {
     if (junctionCount == 2) {
       Serial.println(" left");
@@ -72,10 +73,10 @@ bool test(int dest) {
   }
   if ( previous == 6 && current == 0 && destination == 2) {
     if (junctionCount == 3) {
-      previous = 2;
-      current = 3;
+      previous = 0;
+      current = 2;
       junctionCount = 0;
-      POST_position(3);
+      POST_position(2);
       delay(500);
       destination = Read_Response();
       return true;
@@ -107,13 +108,14 @@ bool test(int dest) {
   }
   //
   //
-  //PREVIOUS = 0 - CURRENT 1 
-  if(previous == 0 && current == 1 && destination  == 2){
-    if(junctionCount == 1){
+  //PREVIOUS = 0 - CURRENT 1
+  if (previous == 0 && current == 1 && destination  == 2) {
+    spin_turn();
+    if (junctionCount == 1) {
       Serial.println(" left");
       left_angle_turn();
     }
-    if(junctionCount == 2){
+    if (junctionCount == 2) {
       previous = 1;
       current = 2;
       POST_position(2);
@@ -122,12 +124,13 @@ bool test(int dest) {
       return true;
     }
   }
-  if(previous == 0 && current == 1 && destination  == 0){
-    if(junctionCount == 1){
+  if (previous == 0 && current == 1 && destination  == 0) {
+    spin_turn();
+    if (junctionCount == 1) {
       Serial.println(" right");
       right_angle_turn();
     }
-    if(junctionCount == 2){
+    if (junctionCount == 2) {
       previous = 1;
       current = 0;
       POST_position(0);
@@ -136,12 +139,13 @@ bool test(int dest) {
       return true;
     }
   }
-  if(previous == 0 && current == 1 && destination  == 3){
-    if(junctionCount == 1){
+  if (previous == 0 && current == 1 && destination  == 3) {
+    spin_turn();
+    if (junctionCount == 1) {
       Serial.println(" left");
       left_angle_turn();
     }
-    if(junctionCount == 3){
+    if (junctionCount == 3) {
       previous = 2;
       current = 3;
       POST_position(3);
@@ -151,6 +155,7 @@ bool test(int dest) {
     }
   }
   if ( previous == 0 && current == 1 && destination == 4) {
+    spin_turn();
     if (junctionCount == 1) {
       Serial.println(" left");
       left_angle_turn();
@@ -162,13 +167,48 @@ bool test(int dest) {
       POST_position(4);
       delay(500);
       destination = Read_Response();
+      return true;
     }
   }
   ////
   ////
-    //PREVIOUS = 0 - CURRENT 2 
-    
-  
+  //PREVIOUS = 0 - CURRENT 2
+  if (previous == 0 && current == 2 && destination == 0) {
+    spin_turn();
+    if (junctionCount == 2) {
+      previous = 2;
+      current = 0;
+      POST_position(0);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 0 && current == 2 && destination == 1) {
+    spin_turn();
+    if (junctionCount == 1) {
+      left_angle_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 2;
+      current = 1;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 0 && current == 2 && destination == 3) {
+    if(junctionCount == 1){
+      previous = 2;
+      current = 3;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+
 
 
   else if ( previous == 0 && current == 1 && destination == 5) {
