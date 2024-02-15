@@ -208,7 +208,17 @@ bool test(int dest) {
       return true;
     }
   }
-
+  if ( previous == 0 && current == 2 && destination == 4){
+  spin_turn();
+  if(junctionCount == 3){
+  previous = 2;
+  current = 4;
+  POST_position(4);
+  delay(500);
+  destination = Read_Response();
+  return true;
+ }
+}
 
 
   else if ( previous == 0 && current == 1 && destination == 5) {
