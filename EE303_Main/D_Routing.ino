@@ -24,7 +24,7 @@ void loopdechelo() {
 
 void junction() {
   junctionCount++;
-  if (junctionCount == 1) {
+  if (junctionCount == 1 && previous == 6)  {
     post();
   }
   else {
@@ -48,14 +48,11 @@ void post() {
     POST_position(0);
     delay(500);
     destination = Read_Response();
-    if (destination == 4) {
-      spin_turn();
-    }
   }
 }
 
 bool test(int dest) {
-  //FROM ZERO
+    //PREVIOUS = NULL - CURRENT 0
   if ( previous == 6 && current == 0 && destination == 1) {
     if (junctionCount == 2) {
       Serial.println(" left");
@@ -66,13 +63,114 @@ bool test(int dest) {
       //Serial.println("FINISHED");
       previous = 0;
       current = 1;
-      //    junctionCount == 0;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
       return true;
     }
   }
+  if ( previous == 6 && current == 0 && destination == 2) {
+    if (junctionCount == 3) {
+      previous = 2;
+      current = 3;
+      junctionCount = 0;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 6 && current == 0 && destination == 3) {
+    if (junctionCount == 4) {
+      previous = 2;
+      current = 3;
+      junctionCount = 0;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 6 && current == 0 && destination == 4) {
+    if (junctionCount == 1) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 0;
+      current = 4;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  //
+  //
+  //PREVIOUS = 0 - CURRENT 1 
+  if(previous == 0 && current == 1 && destination  == 2){
+    if(junctionCount == 1){
+      Serial.println(" left");
+      left_angle_turn();
+    }
+    if(junctionCount == 2){
+      previous = 1;
+      current = 2;
+      POST_position(2);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if(previous == 0 && current == 1 && destination  == 0){
+    if(junctionCount == 1){
+      Serial.println(" right");
+      right_angle_turn();
+    }
+    if(junctionCount == 2){
+      previous = 1;
+      current = 0;
+      POST_position(0);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if(previous == 0 && current == 1 && destination  == 3){
+    if(junctionCount == 1){
+      Serial.println(" left");
+      left_angle_turn();
+    }
+    if(junctionCount == 3){
+      previous = 2;
+      current = 3;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 0 && current == 1 && destination == 4) {
+    if (junctionCount == 1) {
+      Serial.println(" left");
+      left_angle_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 1;
+      current = 4;
+      junctionCount = 0;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+    }
+  }
+  ////
+  ////
+    //PREVIOUS = 0 - CURRENT 2 
+    
+  
+
+
   else if ( previous == 0 && current == 1 && destination == 5) {
 
     if (distance > 900) {
@@ -82,4 +180,3 @@ bool test(int dest) {
   }
   return false;
 }
-
