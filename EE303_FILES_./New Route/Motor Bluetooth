@@ -95,12 +95,12 @@ void loop() {
 
   }
 
-  else if (x == 77 && y == 77) {
+  else if (84 <= x <= 71 && 84 <= y <= 71) {
     digitalWrite(motor1Phase, LOW); //forward
     digitalWrite(motor2Phase, LOW); //forward
     analogWrite(motor1PWM, 0); // set speed of motor
     analogWrite(motor2PWM, 0); // set speed of motor
-  }
+}
 }
 //      //REACHED STATION
 //      else if ( (AnalogValue[0] < 600) && (AnalogValue[4] < 600) && (AnalogValue[2] < 600)) {
