@@ -9,8 +9,11 @@
 
 // wifi details
 WiFiClient client;
-char ssid[] = "NETGEAR63";
-char password[] = "littlecello367";
+// char ssid[] = "NETGEAR63";
+// char password[] = "littlecello367";
+char ssid[] = "iot";
+char password[] = "disdaining78compromiser";
+
 
 String position;
 String body;
