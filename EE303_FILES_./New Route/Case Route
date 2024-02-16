@@ -1,12 +1,10 @@
 int previous = 6;
 int current = 0;
+int junctionCount = 0;
+int destination = 0;
 
 void setup() {
   Serial.begin(9600);
-  delay(20000);
-  String response = readResponse();
-  String route = getRoute(response);
-  Serial.println("Route is..." + route);
 }
 
 void loop() {
@@ -14,29 +12,37 @@ void loop() {
 }
 
 void post() {
-  if (previous = 6) {
+  if (previous == 6) {
     Serial.println("Test");
     POST_position(0);
-    int destination = Read_Response();
+    delay(500);
+    destination = Read_Response();
     Serial.println("destination is...." + destination);
   }
   else {
     previous = current;
     current = destination;
     Serial.println("Test");
-    POST_position(0);
-    int destination = Read_Response();
+    POST_position(current);
+    destination = Read_Response();
+    delay(500);
     Serial.println("destination is...." + destination);
   }
 }
 
 void junction() {
-  junctionCount += 1;
+  junctionCount ++;
 }
 
 void routing(int destination) {
   switch (destination) {
     case 0:
+      if (current == 0) {
+        if (previous == 6) {
+          if (junctionCount == 1) {
+            post();
+          }
+      }
       if (current == 1) {
         if (previous == 1 || 2 || 3) {
           180_turn();
