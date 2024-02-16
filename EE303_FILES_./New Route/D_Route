@@ -95,7 +95,9 @@ bool test(int dest) {
   }
   if ( previous == 6 && current == 0 && destination == 4) {
     if (junctionCount == 1) {
-      spin_turn();
+      if ( junctionCount == 0 ) {
+        spin_turn();
+      }
     }
     if (junctionCount == 2) {
       previous = 0;
@@ -111,7 +113,9 @@ bool test(int dest) {
   //
   //PREVIOUS = 0 | CURRENT = 1
   if (previous == 0 && current == 1 && destination  == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       Serial.println(" right");
       right_angle_turn();
@@ -127,7 +131,9 @@ bool test(int dest) {
     }
   }
   if (previous == 0 && current == 1 && destination  == 2) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       Serial.println(" left");
       left_angle_turn();
@@ -143,7 +149,9 @@ bool test(int dest) {
     }
   }
   if (previous == 0 && current == 1 && destination  == 3) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       Serial.println(" left");
       left_angle_turn();
@@ -159,7 +167,9 @@ bool test(int dest) {
     }
   }
   if ( previous == 0 && current == 1 && destination == 4) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       Serial.println(" left");
       left_angle_turn();
@@ -178,7 +188,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 0 | CURRENT = 2
   if (previous == 0 && current == 2 && destination == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 2) {
       previous = 2;
       current = 0;
@@ -190,7 +202,9 @@ bool test(int dest) {
     }
   }
   if (previous == 0 && current == 2 && destination == 1) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       left_angle_turn();
     }
@@ -216,7 +230,9 @@ bool test(int dest) {
     }
   }
   if ( previous == 0 && current == 2 && destination == 4) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 3) {
       previous = 2;
       current = 4;
@@ -231,7 +247,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 0 | CURRENT = 3
   if (previous == 0 && current == 3 && destination == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 3) {
       previous = 3;
       current = 0;
@@ -243,7 +261,9 @@ bool test(int dest) {
     }
   }
   if (previous == 0 && current == 3 && destination == 1) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 2) {
       right_angle_turn();
     }
@@ -258,7 +278,9 @@ bool test(int dest) {
     }
   }
   if (previous == 0 && current == 3 && destination == 2) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       previous = 3;
       current = 2;
@@ -270,7 +292,9 @@ bool test(int dest) {
     }
   }
   if ( previous == 0 && current == 3 && destination == 4) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 4) {
       previous = 3;
       current = 4;
@@ -285,7 +309,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 0 | CURRENT = 4
   if (previous == 0 && current == 4 && destination == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       previous = 4;
       current = 0;
@@ -297,7 +323,9 @@ bool test(int dest) {
     }
   }
   if (previous == 0 && current == 4 && destination == 1) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 2) {
       left_angle_turn();
     }
@@ -312,7 +340,9 @@ bool test(int dest) {
     }
   }
   if (previous == 0 && current == 4 && destination == 2) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 3) {
       previous = 4;
       current = 2;
@@ -324,7 +354,9 @@ bool test(int dest) {
     }
   }
   if ( previous == 0 && current == 4 && destination == 3) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 4) {
       previous = 4;
       current = 3;
@@ -339,7 +371,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 1 | CURRENT = 0
   if (previous == 1 && current == 0 && destination == 1) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       left_angle_turn();
     }
@@ -354,7 +388,9 @@ bool test(int dest) {
     }
   }
   if (previous == 1 && current == 0 && destination == 2) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 2) {
       previous = 0;
       current = 2;
@@ -366,7 +402,9 @@ bool test(int dest) {
     }
   }
   if (previous == 1 && current == 0 && destination == 3) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 3) {
       previous = 0;
       current = 3;
@@ -392,7 +430,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 1 | CURRENT = 2
   if (previous == 1 && current == 2 && destination == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 2) {
       previous = 2;
       current = 0;
@@ -404,7 +444,9 @@ bool test(int dest) {
     }
   }
   if (previous == 1 && current == 2 && destination == 1) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       right_angle_turn();
     }
@@ -430,7 +472,9 @@ bool test(int dest) {
     }
   }
   if ( previous == 1 && current == 0 && destination == 4) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 3) {
       previous = 2;
       current = 4;
@@ -445,7 +489,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 1 | CURRENT = 3
   if (previous == 1 && current == 3 && destination == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 3) {
       previous = 3;
       current = 0;
@@ -457,7 +503,9 @@ bool test(int dest) {
     }
   }
   if (previous == 1 && current == 3 && destination == 1) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 2) {
       right_angle_turn();
     }
@@ -472,7 +520,9 @@ bool test(int dest) {
     }
   }
   if (previous == 1 && current == 3 && destination == 2) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       previous = 3;
       current = 2;
@@ -484,7 +534,9 @@ bool test(int dest) {
     }
   }
   if ( previous == 1 && current == 3 && destination == 4) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 4) {
       previous = 3;
       current = 4;
@@ -499,7 +551,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 1 | CURRENT = 4
   if (previous == 1 && current == 4 && destination == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       previous = 4;
       current = 0;
@@ -511,7 +565,9 @@ bool test(int dest) {
     }
   }
   if (previous == 1 && current == 4 && destination == 1) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 2) {
       left_angle_turn();
     }
@@ -526,7 +582,9 @@ bool test(int dest) {
     }
   }
   if (previous == 1 && current == 4 && destination == 2) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 3) {
       previous = 4;
       current = 2;
@@ -538,7 +596,9 @@ bool test(int dest) {
     }
   }
   if ( previous == 1 && current == 4 && destination == 3) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 4) {
       previous = 4;
       current = 3;
@@ -553,7 +613,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 2 | CURRENT = 0
   if (previous == 2 && current == 0 && destination == 1) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       left_angle_turn();
     }
@@ -568,7 +630,9 @@ bool test(int dest) {
     }
   }
   if (previous == 2 && current == 0 && destination == 2) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 2) {
       previous = 0;
       current = 2;
@@ -580,7 +644,9 @@ bool test(int dest) {
     }
   }
   if (previous == 2 && current == 0 && destination == 3) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 3) {
       previous = 0;
       current = 3;
@@ -606,7 +672,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 2 | CURRENT = 1
   if (previous == 2 && current == 1 && destination == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       right_angle_turn();
     }
@@ -621,7 +689,9 @@ bool test(int dest) {
     }
   }
   if (previous == 2 && current == 1 && destination == 2) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       left_angle_turn();
     }
@@ -636,7 +706,9 @@ bool test(int dest) {
     }
   }
   if (previous == 2 && current == 1 && destination == 3) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       left_angle_turn();
     }
@@ -668,7 +740,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 2 | CURRENT = 3
   if (previous == 2 && current == 3 && destination == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 3) {
       previous = 3;
       current = 0;
@@ -680,7 +754,9 @@ bool test(int dest) {
     }
   }
   if (previous == 2 && current == 3 && destination == 1) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 2) {
       right_angle_turn();
     }
@@ -695,7 +771,9 @@ bool test(int dest) {
     }
   }
   if (previous == 2 && current == 3 && destination == 2) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       previous = 3;
       current = 2;
@@ -707,7 +785,9 @@ bool test(int dest) {
     }
   }
   if ( previous == 2 && current == 3 && destination == 4) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 4) {
       previous = 3;
       current = 4;
@@ -722,7 +802,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 2 | CURRENT = 4
   if (previous == 2 && current == 4 && destination == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       previous = 4;
       current = 0;
@@ -734,7 +816,9 @@ bool test(int dest) {
     }
   }
   if (previous == 2 && current == 4 && destination == 1) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 2) {
       left_angle_turn();
     }
@@ -749,7 +833,9 @@ bool test(int dest) {
     }
   }
   if (previous == 2 && current == 4 && destination == 2) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 3) {
       previous = 4;
       current = 2;
@@ -761,7 +847,9 @@ bool test(int dest) {
     }
   }
   if ( previous == 2 && current == 4 && destination == 3) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 4) {
       previous = 4;
       current = 3;
@@ -776,7 +864,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 3 | CURRENT = 0
   if (previous == 3 && current == 0 && destination == 1) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       left_angle_turn();
     }
@@ -791,7 +881,9 @@ bool test(int dest) {
     }
   }
   if (previous == 3 && current == 0 && destination == 2) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 2) {
       previous = 0;
       current = 1;
@@ -803,7 +895,9 @@ bool test(int dest) {
     }
   }
   if (previous == 3 && current == 0 && destination == 3) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 3) {
       previous = 0;
       current = 3;
@@ -829,7 +923,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 3 | CURRENT = 1
   if (previous == 3 && current == 1 && destination == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       right_angle_turn();
     }
@@ -844,7 +940,9 @@ bool test(int dest) {
     }
   }
   if (previous == 3 && current == 1 && destination == 2) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       left_angle_turn();
     }
@@ -859,7 +957,9 @@ bool test(int dest) {
     }
   }
   if (previous == 3 && current == 1 && destination == 3) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       left_angle_turn();
     }
@@ -916,7 +1016,9 @@ bool test(int dest) {
     }
   }
   if (previous == 3 && current == 2 && destination == 3) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       previous = 2;
       current = 3;
@@ -942,7 +1044,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 3 | CURRENT = 4
   if (previous == 3 && current == 4 && destination == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       previous = 4;
       current = 0;
@@ -954,7 +1058,9 @@ bool test(int dest) {
     }
   }
   if (previous == 3 && current == 4 && destination == 1) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 2) {
       left_angle_turn();
     }
@@ -969,7 +1075,9 @@ bool test(int dest) {
     }
   }
   if (previous == 3 && current == 4 && destination == 2) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 3) {
       previous = 4;
       current = 2;
@@ -1031,7 +1139,9 @@ bool test(int dest) {
     }
   }
   if ( previous == 4 && current == 0 && destination == 4) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       previous = 0;
       current = 4;
@@ -1046,7 +1156,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 4 | CURRENT = 1
   if (previous == 4 && current == 1 && destination == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       right_angle_turn();
     }
@@ -1061,7 +1173,9 @@ bool test(int dest) {
     }
   }
   if (previous == 4 && current == 1 && destination == 2) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       left_angle_turn();
     }
@@ -1076,7 +1190,9 @@ bool test(int dest) {
     }
   }
   if (previous == 4 && current == 1 && destination == 3) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       left_angle_turn();
     }
@@ -1091,7 +1207,9 @@ bool test(int dest) {
     }
   }
   if ( previous == 4 && current == 0 && destination == 4) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       right_angle_turn();
     }
@@ -1109,7 +1227,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 4 | CURRENT = 2
   if (previous == 4 && current == 2 && destination == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 2) {
       previous = 2;
       current = 0;
@@ -1121,7 +1241,9 @@ bool test(int dest) {
     }
   }
   if (previous == 4 && current == 2 && destination == 1) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       right_angle_turn();
     }
@@ -1147,7 +1269,9 @@ bool test(int dest) {
     }
   }
   if ( previous == 4 && current == 2 && destination == 4) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 3) {
       previous = 2;
       current = 4;
@@ -1162,7 +1286,9 @@ bool test(int dest) {
   ////
   //PREVIOUS = 4 | CURRENT = 3
   if (previous == 4 && current == 3 && destination == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 3) {
       previous = 3;
       current = 0;
@@ -1174,7 +1300,9 @@ bool test(int dest) {
     }
   }
   if (previous == 4 && current == 3 && destination == 1) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 2) {
       right_angle_turn();
     }
@@ -1189,7 +1317,9 @@ bool test(int dest) {
     }
   }
   if (previous == 4 && current == 3 && destination == 2) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       previous = 3;
       current = 2;
@@ -1201,7 +1331,9 @@ bool test(int dest) {
     }
   }
   if ( previous == 4 && current == 3 && destination == 4) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 4) {
       previous = 3;
       current = 4;
