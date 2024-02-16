@@ -19,7 +19,7 @@ void left_angle_turn() {
       digitalWrite(motor2Phase, HIGH); //forward
       analogWrite(motor1PWM, 150); // set speed of motor
       analogWrite(motor2PWM, 0); // set speed of motor
-      delay(500);
+      delay(100);
    
 }
 
@@ -28,15 +28,14 @@ void right_angle_turn() {
       digitalWrite(motor2Phase, HIGH); //forward
       analogWrite(motor1PWM, 0); // set speed of motor
       analogWrite(motor2PWM, 150); // set speed of motor
-      delay(500);
+      delay(100);
  
 }
 
-void move_to_five() {
+void park() {
       digitalWrite(motor1Phase, HIGH); //forward
       digitalWrite(motor2Phase, HIGH); //forward
-      analogWrite(motor1PWM, 100); // set speed of motor
-      analogWrite(motor2PWM, 100); // set speed of motor
-      delay(2000);
-
+      analogWrite(motor1PWM, 185); // set speed of motor
+      analogWrite(motor2PWM, 185); // set speed of motor
+      delay(4000);
 }
