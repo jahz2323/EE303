@@ -45,7 +45,7 @@ void junction() {
 }
 
 void post() {
-  if ( previous = 6) {
+  if ( previous == 6) {
     POST_position(0);
     delay(500);
     destination = Read_Response();
@@ -53,15 +53,13 @@ void post() {
 }
 
 bool test(int dest) {
-  //PREVIOUS = NULL - CURRENT 0
+  //PREVIOUS = 6 | CURRENT = 0
   if ( previous == 6 && current == 0 && destination == 1) {
     if (junctionCount == 2) {
       Serial.println(" left");
       left_angle_turn();
-      //left turn
     }
     if (junctionCount == 3) {
-      //Serial.println("FINISHED");
       previous = 0;
       current = 1;
       junctionCount = 0;
@@ -100,32 +98,35 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 0;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
       return true;
     }
   }
-  //
-  //
-  //PREVIOUS = 0 - CURRENT 1
-  if (previous == 0 && current == 1 && destination  == 2) {
-    spin_turn();
-    if (junctionCount == 1) {
-      Serial.println(" left");
+  if ( previous == 6 && current == 0 && destination == 5) {
+    if (junctionCount == 2) {
       left_angle_turn();
     }
-    if (junctionCount == 2) {
-      previous = 1;
-      current = 2;
-      POST_position(2);
+    if (junctionCount == 4) {
+      park();
+      previous = 0;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
       delay(500);
       destination = Read_Response();
       return true;
     }
   }
+  //
+  //
+  //PREVIOUS = 0 | CURRENT = 1
   if (previous == 0 && current == 1 && destination  == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       Serial.println(" right");
       right_angle_turn();
@@ -133,14 +134,35 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 1;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
       return true;
     }
   }
+  if (previous == 0 && current == 1 && destination  == 2) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      Serial.println(" left");
+      left_angle_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 1;
+      current = 2;
+      junctionCount = 0;
+      POST_position(2);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
   if (previous == 0 && current == 1 && destination  == 3) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       Serial.println(" left");
       left_angle_turn();
@@ -148,6 +170,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 2;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -155,7 +178,9 @@ bool test(int dest) {
     }
   }
   if ( previous == 0 && current == 1 && destination == 4) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
       Serial.println(" left");
       left_angle_turn();
@@ -170,14 +195,29 @@ bool test(int dest) {
       return true;
     }
   }
+  if ( previous == 0 && current == 1 && destination == 5) {
+    if (junctionCount == 1) {
+      park();
+      previous = 1;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
   ////
   ////
-  //PREVIOUS = 0 - CURRENT 2
+  //PREVIOUS = 0 | CURRENT = 2
   if (previous == 0 && current == 2 && destination == 0) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 2) {
       previous = 2;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -185,13 +225,16 @@ bool test(int dest) {
     }
   }
   if (previous == 0 && current == 2 && destination == 1) {
-    spin_turn();
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
     if (junctionCount == 1) {
-      left_angle_turn();
+      right_angle_turn();
     }
     if (junctionCount == 2) {
       previous = 2;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -199,34 +242,1453 @@ bool test(int dest) {
     }
   }
   if (previous == 0 && current == 2 && destination == 3) {
-    if(junctionCount == 1){
+    if (junctionCount == 1) {
       previous = 2;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
       return true;
     }
   }
-  if ( previous == 0 && current == 2 && destination == 4){
-  spin_turn();
-  if(junctionCount == 3){
-  previous = 2;
-  current = 4;
-  POST_position(4);
-  delay(500);
-  destination = Read_Response();
-  return true;
- }
-}
-
-
-  else if ( previous == 0 && current == 1 && destination == 5) {
-
-    if (distance > 900) {
-      POST_position(5);
+  if ( previous == 0 && current == 2 && destination == 4) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
     }
-    return true;
+    if (junctionCount == 3) {
+      previous = 2;
+      current = 4;
+      junctionCount = 0;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
   }
+  if ( previous == 0 && current == 2 && destination == 5) {
+    if (junctionCount == 1) {
+      right_angle_turn();
+    }
+    if (junctionCount == 3) {
+      park();
+      previous = 2;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 0 | CURRENT = 3
+  if (previous == 0 && current == 3 && destination == 0) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 3;
+      current = 0;
+      junctionCount = 0;
+      POST_position(0);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 0 && current == 3 && destination == 1) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      right_angle_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 3;
+      current = 1;
+      junctionCount = 0;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 0 && current == 3 && destination == 2) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      previous = 3;
+      current = 2;
+      junctionCount = 0;
+      POST_position(2);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 0 && current == 3 && destination == 4) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 4) {
+      previous = 3;
+      current = 4;
+      junctionCount = 0;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 0 && current == 3 && destination == 5) {
+    if (junctionCount == 2) {
+      right_angle_turn();
+    }
+    if (junctionCount == 4) {
+      park();
+      previous = 3;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 0 | CURRENT = 4
+  if (previous == 0 && current == 4 && destination == 0) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      previous = 4;
+      current = 0;
+      junctionCount = 0;
+      POST_position(0);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 0 && current == 4 && destination == 1) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      left_angle_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 4;
+      current = 1;
+      junctionCount = 0;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 0 && current == 4 && destination == 2) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 4;
+      current = 2;
+      junctionCount = 0;
+      POST_position(2);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 0 && current == 4 && destination == 3) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 4) {
+      previous = 4;
+      current = 3;
+      junctionCount = 0;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 0 && current == 4 && destination == 5) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      left_angle_turn();
+    }
+    if (junctionCount == 4) {
+      park();
+      previous = 4;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 1 | CURRENT = 0
+  if (previous == 1 && current == 0 && destination == 1) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      left_angle_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 0;
+      current = 1;
+      junctionCount = 0;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 1 && current == 0 && destination == 2) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 0;
+      current = 2;
+      junctionCount = 0;
+      POST_position(2);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 1 && current == 0 && destination == 3) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 0;
+      current = 3;
+      junctionCount = 0;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 1 && current == 0 && destination == 4) {
+    if (junctionCount == 1) {
+      previous = 0;
+      current = 4;
+      junctionCount = 0;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 1 && current == 0 && destination == 5) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      left_angle_turn();
+    }
+    if (junctionCount == 3) {
+      park();
+      previous = 0;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 1 | CURRENT = 2
+  if (previous == 1 && current == 2 && destination == 0) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 2;
+      current = 0;
+      junctionCount = 0;
+      POST_position(0);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 1 && current == 2 && destination == 1) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      right_angle_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 2;
+      current = 1;
+      junctionCount = 0;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 1 && current == 2 && destination == 3) {
+    if (junctionCount == 1) {
+      previous = 2;
+      current = 3;
+      junctionCount = 0;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 1 && current == 2 && destination == 4) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 2;
+      current = 4;
+      junctionCount = 0;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 1 && current == 2 && destination == 5) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      right_angle_turn();
+    }
+    if (junctionCount == 3) {
+      park();
+      previous = 2;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 1 | CURRENT = 3
+  if (previous == 1 && current == 3 && destination == 0) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 3;
+      current = 0;
+      junctionCount = 0;
+      POST_position(0);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 1 && current == 3 && destination == 1) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      right_angle_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 3;
+      current = 1;
+      junctionCount = 0;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 1 && current == 3 && destination == 2) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      previous = 3;
+      current = 2;
+      junctionCount = 0;
+      POST_position(2);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 1 && current == 3 && destination == 4) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 4) {
+      previous = 3;
+      current = 4;
+      junctionCount = 0;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 1 && current == 3 && destination == 5) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      right_angle_turn();
+    }
+    if (junctionCount == 4) {
+      park();
+      previous = 3;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 1 | CURRENT = 4
+  if (previous == 1 && current == 4 && destination == 0) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      previous = 4;
+      current = 0;
+      junctionCount = 0;
+      POST_position(0);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 1 && current == 4 && destination == 1) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      left_angle_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 4;
+      current = 1;
+      junctionCount = 0;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 1 && current == 4 && destination == 2) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 4;
+      current = 2;
+      junctionCount = 0;
+      POST_position(2);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 1 && current == 4 && destination == 3) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 4) {
+      previous = 4;
+      current = 3;
+      junctionCount = 0;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 1 && current == 4 && destination == 5) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      left_angle_turn();
+    }
+    if (junctionCount == 4) {
+      park();
+      previous = 4;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 2 | CURRENT = 0
+  if (previous == 2 && current == 0 && destination == 1) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      left_angle_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 0;
+      current = 1;
+      junctionCount = 0;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 2 && current == 0 && destination == 2) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 0;
+      current = 2;
+      junctionCount = 0;
+      POST_position(2);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 2 && current == 0 && destination == 3) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 0;
+      current = 3;
+      junctionCount = 0;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 2 && current == 0 && destination == 4) {
+    if (junctionCount == 1) {
+      previous = 0;
+      current = 4;
+      junctionCount = 0;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 2 && current == 0 && destination == 5) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      left_angle_turn();
+    }
+    if (junctionCount == 3) {
+      park();
+      previous = 0;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 2 | CURRENT = 1
+  if (previous == 2 && current == 1 && destination == 0) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      right_angle_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 1;
+      current = 0;
+      junctionCount = 0;
+      POST_position(0);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 2 && current == 1 && destination == 2) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      left_angle_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 1;
+      current = 2;
+      junctionCount = 0;
+      POST_position(2);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 2 && current == 1 && destination == 3) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      left_angle_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 1;
+      current = 3;
+      junctionCount = 0;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 2 && current == 1 && destination == 4) {
+    if (junctionCount == 1) {
+      right_angle_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 1;
+      current = 4;
+      junctionCount = 0;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 2 && current == 1 && destination == 5) {
+    if (junctionCount == 1) {
+      park();
+      previous = 1;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 2 | CURRENT = 3
+  if (previous == 2 && current == 3 && destination == 0) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 3;
+      current = 0;
+      junctionCount = 0;
+      POST_position(0);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 2 && current == 3 && destination == 1) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      right_angle_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 3;
+      current = 1;
+      junctionCount = 0;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 2 && current == 3 && destination == 2) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      previous = 3;
+      current = 2;
+      junctionCount = 0;
+      POST_position(2);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 2 && current == 3 && destination == 4) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 4) {
+      previous = 3;
+      current = 4;
+      junctionCount = 0;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 2 && current == 3 && destination == 5) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      right_angle_turn();
+    }
+    if (junctionCount == 4) {
+      park();
+      previous = 3;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 2 | CURRENT = 4
+  if (previous == 2 && current == 4 && destination == 0) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      previous = 4;
+      current = 0;
+      junctionCount = 0;
+      POST_position(0);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 2 && current == 4 && destination == 1) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      left_angle_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 4;
+      current = 1;
+      junctionCount = 0;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 2 && current == 4 && destination == 2) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 4;
+      current = 2;
+      junctionCount = 0;
+      POST_position(2);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 2 && current == 4 && destination == 3) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 4) {
+      previous = 4;
+      current = 3;
+      junctionCount = 0;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 2 && current == 4 && destination == 5) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      left_angle_turn();
+    }
+    if (junctionCount == 4) {
+      park();
+      previous = 4;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 3 | CURRENT = 0
+  if (previous == 3 && current == 0 && destination == 1) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      left_angle_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 0;
+      current = 1;
+      junctionCount = 0;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 3 && current == 0 && destination == 2) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 0;
+      current = 1;
+      junctionCount = 0;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 3 && current == 0 && destination == 3) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 0;
+      current = 3;
+      junctionCount = 0;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 3 && current == 0 && destination == 4) {
+    if (junctionCount == 1) {
+      previous = 0;
+      current = 4;
+      junctionCount = 0;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 3 && current == 0 && destination == 5) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      left_angle_turn();
+    }
+    if (junctionCount == 3) {
+      park();
+      previous = 0;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 3 | CURRENT = 1
+  if (previous == 3 && current == 1 && destination == 0) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      right_angle_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 1;
+      current = 0;
+      junctionCount = 0;
+      POST_position(0);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 3 && current == 1 && destination == 2) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      left_angle_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 1;
+      current = 2;
+      junctionCount = 0;
+      POST_position(2);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 3 && current == 1 && destination == 3) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      left_angle_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 1;
+      current = 3;
+      junctionCount = 0;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 3 && current == 1 && destination == 4) {
+    if (junctionCount == 1) {
+      right_angle_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 1;
+      current = 4;
+      junctionCount = 0;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 3 && current == 1 && destination == 5) {
+    if (junctionCount == 1) {
+      park();
+      previous = 1;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 3 | CURRENT = 2
+  if (previous == 3 && current == 2 && destination == 0) {
+    if (junctionCount == 2) {
+      previous = 2;
+      current = 0;
+      junctionCount = 0;
+      POST_position(0);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 3 && current == 2 && destination == 1) {
+    if (junctionCount == 1) {
+      right_angle_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 2;
+      current = 1;
+      junctionCount = 0;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 3 && current == 2 && destination == 3) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      previous = 2;
+      current = 3;
+      junctionCount = 0;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 3 && current == 2 && destination == 4) {
+    if (junctionCount == 3) {
+      previous = 2;
+      current = 4;
+      junctionCount = 0;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 3 && current == 2 && destination == 5) {
+    if (junctionCount == 1) {
+      right_angle_turn();
+    }
+    if (junctionCount == 3) {
+      park();
+      previous = 2;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 3 | CURRENT = 4
+  if (previous == 3 && current == 4 && destination == 0) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      previous = 4;
+      current = 0;
+      junctionCount = 0;
+      POST_position(0);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 3 && current == 4 && destination == 1) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      left_angle_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 4;
+      current = 1;
+      junctionCount = 0;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 3 && current == 4 && destination == 2) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 4;
+      current = 2;
+      junctionCount = 0;
+      POST_position(2);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 3 && current == 4 && destination == 3) {
+    if (junctionCount == 4) {
+      previous = 4;
+      current = 3;
+      junctionCount = 0;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 3 && current == 4 && destination == 5) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      left_angle_turn();
+    }
+    if (junctionCount == 4) {
+      park();
+      previous = 4;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 4 | CURRENT = 0
+  if (previous == 4 && current == 0 && destination == 1) {
+    if (junctionCount == 1) {
+      left_angle_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 0;
+      current = 1;
+      junctionCount = 0;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 4 && current == 0 && destination == 2) {
+    if (junctionCount == 2) {
+      previous = 0;
+      current = 2;
+      junctionCount = 0;
+      POST_position(2);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 4 && current == 0 && destination == 3) {
+    if (junctionCount == 3) {
+      previous = 0;
+      current = 3;
+      junctionCount = 0;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 4 && current == 0 && destination == 4) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      previous = 0;
+      current = 4;
+      junctionCount = 0;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 4 && current == 0 && destination == 5) {
+    if (junctionCount == 1) {
+      left_angle_turn();
+    }
+    if (junctionCount == 3) {
+      park();
+      previous = 0;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 4 | CURRENT = 1
+  if (previous == 4 && current == 1 && destination == 0) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      right_angle_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 1;
+      current = 0;
+      junctionCount = 0;
+      POST_position(0);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 4 && current == 1 && destination == 2) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      left_angle_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 1;
+      current = 2;
+      junctionCount = 0;
+      POST_position(2);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 4 && current == 1 && destination == 3) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      left_angle_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 1;
+      current = 3;
+      junctionCount = 0;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 4 && current == 1 && destination == 4) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      right_angle_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 1;
+      current = 4;
+      junctionCount = 0;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 4 && current == 1 && destination == 5) {
+    if (junctionCount == 1) {
+      park();
+      previous = 1;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 4 | CURRENT = 2
+  if (previous == 4 && current == 2 && destination == 0) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 2;
+      current = 0;
+      junctionCount = 0;
+      POST_position(0);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 4 && current == 2 && destination == 1) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      right_angle_turn();
+    }
+    if (junctionCount == 2) {
+      previous = 2;
+      current = 1;
+      junctionCount = 0;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 4 && current == 2 && destination == 3) {
+    if (junctionCount == 1) {
+      previous = 2;
+      current = 3;
+      junctionCount = 0;
+      POST_position(3);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 4 && current == 2 && destination == 4) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 2;
+      current = 4;
+      junctionCount = 0;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 4 && current == 2 && destination == 5) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      right_angle_turn();
+    }
+    if (junctionCount == 3) {
+      park();
+      previous = 2;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  ////
+  ////
+  //PREVIOUS = 4 | CURRENT = 3
+  if (previous == 4 && current == 3 && destination == 0) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 3;
+      current = 0;
+      junctionCount = 0;
+      POST_position(0);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 4 && current == 3 && destination == 1) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      right_angle_turn();
+    }
+    if (junctionCount == 3) {
+      previous = 3;
+      current = 1;
+      junctionCount = 0;
+      POST_position(1);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if (previous == 4 && current == 3 && destination == 2) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 1) {
+      previous = 3;
+      current = 2;
+      junctionCount = 0;
+      POST_position(2);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 4 && current == 3 && destination == 4) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 4) {
+      previous = 3;
+      current = 4;
+      junctionCount = 0;
+      POST_position(4);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+  if ( previous == 4 && current == 3 && destination == 5) {
+    if ( junctionCount == 0 ) {
+      spin_turn();
+    }
+    if (junctionCount == 2) {
+      right_angle_turn();
+    }
+    if (junctionCount == 4) {
+      park();
+      previous = 3;
+      current = 5;
+      junctionCount = 0;
+      POST_position(5);
+      delay(500);
+      destination = Read_Response();
+      return true;
+    }
+  }
+
+
+
+
+//  else if ( previous == 0 && current == 1 && destination == 5) {
+//
+//    if (distance > 900) {
+//      POST_position(5);
+//    }
+//    return true;
+//  }
   return false;
 }
