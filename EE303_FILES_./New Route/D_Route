@@ -100,6 +100,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 0;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
@@ -118,6 +119,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 1;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -133,6 +135,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 1;
       current = 2;
+      junctionCount = 0;
       POST_position(2);
       delay(500);
       destination = Read_Response();
@@ -148,6 +151,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 2;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -178,6 +182,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 2;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -192,6 +197,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 2;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -202,6 +208,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       previous = 2;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -213,6 +220,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 2;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
@@ -227,6 +235,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 3;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -241,6 +250,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 3;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -252,6 +262,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       previous = 3;
       current = 2;
+      junctionCount = 0;
       POST_position(2);
       delay(500);
       destination = Read_Response();
@@ -263,6 +274,7 @@ bool test(int dest) {
     if (junctionCount == 4) {
       previous = 3;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
@@ -277,6 +289,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       previous = 4;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -291,6 +304,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 4;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -302,6 +316,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 4;
       current = 2;
+      junctionCount = 0;
       POST_position(2);
       delay(500);
       destination = Read_Response();
@@ -313,6 +328,7 @@ bool test(int dest) {
     if (junctionCount == 4) {
       previous = 4;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -330,6 +346,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 0;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -341,6 +358,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 0;
       current = 2;
+      junctionCount = 0;
       POST_position(2);
       delay(500);
       destination = Read_Response();
@@ -352,6 +370,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 0;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -362,6 +381,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       previous = 0;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
@@ -376,6 +396,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 2;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -390,6 +411,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 2;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -400,6 +422,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       previous = 2;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -411,6 +434,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 2;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
@@ -425,6 +449,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 3;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -439,6 +464,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 3;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -450,6 +476,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       previous = 3;
       current = 2;
+      junctionCount = 0;
       POST_position(2);
       delay(500);
       destination = Read_Response();
@@ -461,6 +488,7 @@ bool test(int dest) {
     if (junctionCount == 4) {
       previous = 3;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
@@ -475,6 +503,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       previous = 4;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -489,6 +518,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 4;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -500,6 +530,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 4;
       current = 2;
+      junctionCount = 0;
       POST_position(2);
       delay(500);
       destination = Read_Response();
@@ -511,6 +542,7 @@ bool test(int dest) {
     if (junctionCount == 4) {
       previous = 4;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -528,6 +560,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 0;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -539,6 +572,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 0;
       current = 2;
+      junctionCount = 0;
       POST_position(2);
       delay(500);
       destination = Read_Response();
@@ -550,6 +584,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 0;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -560,6 +595,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       previous = 0;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
@@ -577,6 +613,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 1;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -591,6 +628,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 1;
       current = 2;
+      junctionCount = 0;
       POST_position(2);
       delay(500);
       destination = Read_Response();
@@ -605,6 +643,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 1;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -618,6 +657,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 1;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
@@ -632,6 +672,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 3;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -646,6 +687,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 3;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -657,6 +699,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       previous = 3;
       current = 2;
+      junctionCount = 0;
       POST_position(2);
       delay(500);
       destination = Read_Response();
@@ -668,6 +711,7 @@ bool test(int dest) {
     if (junctionCount == 4) {
       previous = 3;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
@@ -682,6 +726,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       previous = 4;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -696,6 +741,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 4;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -707,6 +753,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 4;
       current = 2;
+      junctionCount = 0;
       POST_position(2);
       delay(500);
       destination = Read_Response();
@@ -718,6 +765,7 @@ bool test(int dest) {
     if (junctionCount == 4) {
       previous = 4;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -735,6 +783,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 0;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -746,6 +795,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 0;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -757,6 +807,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 0;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -767,6 +818,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       previous = 0;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
@@ -784,6 +836,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 1;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -798,6 +851,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 1;
       current = 2;
+      junctionCount = 0;
       POST_position(2);
       delay(500);
       destination = Read_Response();
@@ -812,6 +866,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 1;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -825,6 +880,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 1;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
@@ -838,6 +894,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 2;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -851,6 +908,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 2;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -862,6 +920,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       previous = 2;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -872,6 +931,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 2;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
@@ -886,6 +946,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       previous = 4;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -900,6 +961,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 4;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -911,6 +973,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 4;
       current = 2;
+      junctionCount = 0;
       POST_position(2);
       delay(500);
       destination = Read_Response();
@@ -921,6 +984,7 @@ bool test(int dest) {
     if (junctionCount == 4) {
       previous = 4;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -937,6 +1001,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 0;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -947,6 +1012,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 0;
       current = 2;
+      junctionCount = 0;
       POST_position(2);
       delay(500);
       destination = Read_Response();
@@ -957,6 +1023,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 0;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -968,6 +1035,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       previous = 0;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
@@ -985,6 +1053,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 1;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -999,6 +1068,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 1;
       current = 2;
+      junctionCount = 0;
       POST_position(2);
       delay(500);
       destination = Read_Response();
@@ -1013,6 +1083,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 1;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -1027,6 +1098,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 1;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
@@ -1041,6 +1113,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 2;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -1055,6 +1128,7 @@ bool test(int dest) {
     if (junctionCount == 2) {
       previous = 2;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -1065,6 +1139,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       previous = 2;
       current = 3;
+      junctionCount = 0;
       POST_position(3);
       delay(500);
       destination = Read_Response();
@@ -1076,6 +1151,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 2;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
@@ -1090,6 +1166,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 3;
       current = 0;
+      junctionCount = 0;
       POST_position(0);
       delay(500);
       destination = Read_Response();
@@ -1104,6 +1181,7 @@ bool test(int dest) {
     if (junctionCount == 3) {
       previous = 3;
       current = 1;
+      junctionCount = 0;
       POST_position(1);
       delay(500);
       destination = Read_Response();
@@ -1115,6 +1193,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       previous = 3;
       current = 2;
+      junctionCount = 0;
       POST_position(2);
       delay(500);
       destination = Read_Response();
@@ -1126,6 +1205,7 @@ bool test(int dest) {
     if (junctionCount == 4) {
       previous = 3;
       current = 4;
+      junctionCount = 0;
       POST_position(4);
       delay(500);
       destination = Read_Response();
