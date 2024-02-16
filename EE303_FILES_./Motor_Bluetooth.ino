@@ -1,8 +1,3 @@
-
-
-
-
-
 int motor1PWM = 39; // P2.6
 int motor1Phase = 40; // P2.7
 int motor2PWM = 37; // P2.6
