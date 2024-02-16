@@ -95,9 +95,7 @@ bool test(int dest) {
   }
   if ( previous == 6 && current == 0 && destination == 4) {
     if (junctionCount == 1) {
-      if ( junctionCount == 0 ) {
         spin_turn();
-      }
     }
     if (junctionCount == 2) {
       previous = 0;
