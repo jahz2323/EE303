@@ -3,9 +3,9 @@ int current = 0;
 int junctionCount = 0;
 int destination = 111;
 
-
 int distance = 0;
 
+bool flag = false;
 void setupdecehlo() {
   // put your setup code here, to run once
   Serial.begin(9600);
@@ -13,14 +13,12 @@ void setupdecehlo() {
   //    String response = readResponse();
   //    String route = getRoute(response);
   //    Serial.println("Route is.." + route);
-
 }
 
 void loopdechelo() {
-  distance = analogRead(A5);
-  //  Serial.println("   ");
-  //  Serial.print(distance);
+ 
   test(destination);
+ 
 }
 
 void junction() {
@@ -110,7 +108,10 @@ bool test(int dest) {
       left_angle_turn();
     }
     if (junctionCount == 4) {
-      park();
+      while(park()==true){
+        
+      }
+      if(park()==false){
       previous = 0;
       current = 5;
       junctionCount = 0;
@@ -118,6 +119,7 @@ bool test(int dest) {
       delay(500);
       destination = Read_Response();
       return true;
+      }
     }
   }
   //
@@ -1669,7 +1671,7 @@ bool test(int dest) {
       right_angle_turn();
     }
     if (junctionCount == 4) {
-      park();
+  
       previous = 3;
       current = 5;
       junctionCount = 0;
