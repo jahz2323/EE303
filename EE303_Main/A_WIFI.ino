@@ -75,6 +75,7 @@ int Read_Response() {
     }
     else {
       client.stop();
+      stopmotor();
     }
   }
   return destination;
