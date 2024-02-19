@@ -2,23 +2,14 @@ int previous = 6;
 int current = 0;
 int junctionCount = 0;
 int destination = 111;
-
 int distance = 0;
 
-bool flag = false;
 void setupdecehlo() {
-  // put your setup code here, to run once
   Serial.begin(9600);
-
-  //    String response = readResponse();
-  //    String route = getRoute(response);
-  //    Serial.println("Route is.." + route);
 }
 
 void loopdechelo() {
-
   test(destination);
-
 }
 
 void junction() {
@@ -54,7 +45,6 @@ bool test(int dest) {
   //PREVIOUS = 6 | CURRENT = 0
   if ( previous == 6 && current == 0 && destination == 1) {
     if (junctionCount == 2) {
-      Serial.println(" left");
       left_angle_turn();
     }
     if (junctionCount == 3) {
@@ -112,12 +102,7 @@ bool test(int dest) {
 
       }
       if (park() == false) {
-        previous = 0;
-        current = 5;
-        junctionCount = 0;
         POST_position(5);
-        delay(500);
-        destination = Read_Response();
         return true;
       }
     }
@@ -130,7 +115,6 @@ bool test(int dest) {
       spin_turn();
     }
     if (junctionCount == 1) {
-      Serial.println(" right");
       right_angle_turn();
     }
     if (junctionCount == 2) {
@@ -148,7 +132,6 @@ bool test(int dest) {
       spin_turn();
     }
     if (junctionCount == 1) {
-      Serial.println(" left");
       left_angle_turn();
     }
     if (junctionCount == 2) {
@@ -166,7 +149,6 @@ bool test(int dest) {
       spin_turn();
     }
     if (junctionCount == 1) {
-      Serial.println(" left");
       left_angle_turn();
     }
     if (junctionCount == 3) {
@@ -184,7 +166,6 @@ bool test(int dest) {
       spin_turn();
     }
     if (junctionCount == 1) {
-      Serial.println(" left");
       left_angle_turn();
     }
     if (junctionCount == 2) {
@@ -203,13 +184,7 @@ bool test(int dest) {
 
       }
       if (park() == false) {
-        park();
-        previous = 1;
-        current = 5;
-        junctionCount = 0;
         POST_position(5);
-        delay(500);
-        destination = Read_Response();
         return true;
       }
     }
@@ -278,14 +253,13 @@ bool test(int dest) {
       right_angle_turn();
     }
     if (junctionCount == 3) {
-      park();
-      previous = 2;
-      current = 5;
-      junctionCount = 0;
+      while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+    }
     }
   }
   ////
@@ -355,14 +329,13 @@ bool test(int dest) {
       right_angle_turn();
     }
     if (junctionCount == 4) {
-      park();
-      previous = 3;
-      current = 5;
-      junctionCount = 0;
+      while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+    }
     }
   }
   ////
@@ -435,14 +408,13 @@ bool test(int dest) {
       left_angle_turn();
     }
     if (junctionCount == 4) {
-      park();
-      previous = 4;
-      current = 5;
-      junctionCount = 0;
+            while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+    }
     }
   }
   ////
@@ -512,15 +484,13 @@ bool test(int dest) {
       left_angle_turn();
     }
     if (junctionCount == 3) {
-      park();
-      previous = 0;
-      current = 5;
-      junctionCount = 0;
+            while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
-    }
+    }}
   }
   ////
   ////
@@ -589,14 +559,13 @@ bool test(int dest) {
       right_angle_turn();
     }
     if (junctionCount == 3) {
-      park();
-      previous = 2;
-      current = 5;
-      junctionCount = 0;
+      while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+      }
     }
   }
   ////
@@ -669,14 +638,13 @@ bool test(int dest) {
       right_angle_turn();
     }
     if (junctionCount == 4) {
-      park();
-      previous = 3;
-      current = 5;
-      junctionCount = 0;
+      while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+      }
     }
   }
   ////
@@ -749,14 +717,13 @@ bool test(int dest) {
       left_angle_turn();
     }
     if (junctionCount == 4) {
-      park();
-      previous = 4;
-      current = 5;
-      junctionCount = 0;
+      while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+      }
     }
   }
   ////
@@ -826,14 +793,13 @@ bool test(int dest) {
       left_angle_turn();
     }
     if (junctionCount == 3) {
-      park();
-      previous = 0;
-      current = 5;
-      junctionCount = 0;
+      while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+      }
     }
   }
   ////
@@ -906,14 +872,13 @@ bool test(int dest) {
   }
   if ( previous == 2 && current == 1 && destination == 5) {
     if (junctionCount == 1) {
-      park();
-      previous = 1;
-      current = 5;
-      junctionCount = 0;
+      while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+      }
     }
   }
   ////
@@ -986,14 +951,13 @@ bool test(int dest) {
       right_angle_turn();
     }
     if (junctionCount == 4) {
-      park();
-      previous = 3;
-      current = 5;
-      junctionCount = 0;
+      while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+      }
     }
   }
   ////
@@ -1066,14 +1030,13 @@ bool test(int dest) {
       left_angle_turn();
     }
     if (junctionCount == 4) {
-      park();
-      previous = 4;
-      current = 5;
-      junctionCount = 0;
+      while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+      }
     }
   }
   ////
@@ -1143,14 +1106,12 @@ bool test(int dest) {
       left_angle_turn();
     }
     if (junctionCount == 3) {
-      park();
-      previous = 0;
-      current = 5;
-      junctionCount = 0;
+      while (park() == true) {
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+      }
     }
   }
   ////
@@ -1223,14 +1184,13 @@ bool test(int dest) {
   }
   if ( previous == 3 && current == 1 && destination == 5) {
     if (junctionCount == 1) {
-      park();
-      previous = 1;
-      current = 5;
-      junctionCount = 0;
+      while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+      }
     }
   }
   ////
@@ -1291,14 +1251,13 @@ bool test(int dest) {
       right_angle_turn();
     }
     if (junctionCount == 3) {
-      park();
-      previous = 2;
-      current = 5;
-      junctionCount = 0;
+            while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+      }
     }
   }
   ////
@@ -1368,14 +1327,13 @@ bool test(int dest) {
       left_angle_turn();
     }
     if (junctionCount == 4) {
-      park();
-      previous = 4;
-      current = 5;
-      junctionCount = 0;
+      while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+      }
     }
   }
   ////
@@ -1436,14 +1394,13 @@ bool test(int dest) {
       left_angle_turn();
     }
     if (junctionCount == 3) {
-      park();
-      previous = 0;
-      current = 5;
-      junctionCount = 0;
+      while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+      }
     }
   }
   ////
@@ -1519,14 +1476,13 @@ bool test(int dest) {
   }
   if ( previous == 4 && current == 1 && destination == 5) {
     if (junctionCount == 1) {
-      park();
-      previous = 1;
-      current = 5;
-      junctionCount = 0;
+      while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+      }
     }
   }
   ////
@@ -1596,14 +1552,13 @@ bool test(int dest) {
       right_angle_turn();
     }
     if (junctionCount == 3) {
-      park();
-      previous = 2;
-      current = 5;
-      junctionCount = 0;
+      while (park() == true) {
+
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+      }
     }
   }
   ////
@@ -1676,26 +1631,14 @@ bool test(int dest) {
       right_angle_turn();
     }
     if (junctionCount == 4) {
+      while (park() == true) {
 
-      previous = 3;
-      current = 5;
-      junctionCount = 0;
+      }
+      if (park() == false) {
       POST_position(5);
-      delay(500);
-      destination = Read_Response();
       return true;
+      }
     }
   }
-
-
-
-
-  //  else if ( previous == 0 && current == 1 && destination == 5) {
-  //
-  //    if (distance > 900) {
-  //      POST_position(5);
-  //    }
-  //    return true;
-  //  }
   return false;
 }
