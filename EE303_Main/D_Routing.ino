@@ -16,9 +16,9 @@ void setupdecehlo() {
 }
 
 void loopdechelo() {
- 
+
   test(destination);
- 
+
 }
 
 void junction() {
@@ -108,17 +108,17 @@ bool test(int dest) {
       left_angle_turn();
     }
     if (junctionCount == 4) {
-      while(park()==true){
-        
+      while (park() == true) {
+
       }
-      if(park()==false){
-      previous = 0;
-      current = 5;
-      junctionCount = 0;
-      POST_position(5);
-      delay(500);
-      destination = Read_Response();
-      return true;
+      if (park() == false) {
+        previous = 0;
+        current = 5;
+        junctionCount = 0;
+        POST_position(5);
+        delay(500);
+        destination = Read_Response();
+        return true;
       }
     }
   }
@@ -199,14 +199,19 @@ bool test(int dest) {
   }
   if ( previous == 0 && current == 1 && destination == 5) {
     if (junctionCount == 1) {
-      park();
-      previous = 1;
-      current = 5;
-      junctionCount = 0;
-      POST_position(5);
-      delay(500);
-      destination = Read_Response();
-      return true;
+      while (park() == true) {
+
+      }
+      if (park() == false) {
+        park();
+        previous = 1;
+        current = 5;
+        junctionCount = 0;
+        POST_position(5);
+        delay(500);
+        destination = Read_Response();
+        return true;
+      }
     }
   }
   ////
@@ -1671,7 +1676,7 @@ bool test(int dest) {
       right_angle_turn();
     }
     if (junctionCount == 4) {
-  
+
       previous = 3;
       current = 5;
       junctionCount = 0;
@@ -1685,12 +1690,12 @@ bool test(int dest) {
 
 
 
-//  else if ( previous == 0 && current == 1 && destination == 5) {
-//
-//    if (distance > 900) {
-//      POST_position(5);
-//    }
-//    return true;
-//  }
+  //  else if ( previous == 0 && current == 1 && destination == 5) {
+  //
+  //    if (distance > 900) {
+  //      POST_position(5);
+  //    }
+  //    return true;
+  //  }
   return false;
 }
