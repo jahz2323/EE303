@@ -1,34 +1,49 @@
 #define LED GREEN_LED
-
+char data_received;
+    
 void setup() {
   Serial1.begin(9600); /* Define baud rate for serial communication */
-  pinMode(LED, OUTPUT);     
+  pinMode(LED, OUTPUT);
 }
 
 void loop() {
 
   if (Serial1.available())  /* If data is available on serial port */
   {
-    char data_received; 
+
     data_received = Serial1.read();  /* Data received from bluetooth */
-    Serial1.write(data_received);  
+    Serial1.write(data_received);
+  
     if (data_received == '1')
     {
-      Serial1.write("LED turned ON");      
-      digitalWrite(LED, HIGH);    
-      playmusic();    
+      playmusic();
     }
-    else if (data_received == '2')
+
+    else if (data_received == '3')
     {
-      Serial1.write("LED turned OFF");    
-      digitalWrite(LED, LOW);
+      forward();
     }
-    else
+    else if (data_received == '4')
     {
-      Serial1.write("Select either 1 or 2");
+      backward();
     }
+    else if (data_received == '5')
+    {
+      left();
+    }
+    else if (data_received == '6')
+    {
+      right();
+    }
+    else if (data_received == '7')
+    {
+      brake();
+    }
+      else if (data_received == '8')
+    {
+      turn();
+    }
+
   }
+  Serial.print(data_received);
 }
-
-
-
