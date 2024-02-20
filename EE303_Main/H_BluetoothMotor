@@ -1,0 +1,51 @@
+int motor1PWM = 39; // P2.6
+int motor1Phase = 40; // P2.7
+int motor2PWM = 37; // P2.6
+int motor2Phase = 38; // P2.7
+void forward() {
+  digitalWrite(motor1Phase, HIGH); //forward
+  digitalWrite(motor2Phase, HIGH); //forward
+  analogWrite(motor1PWM, 255); // set speed of motor
+  analogWrite(motor2PWM, 255); // set speed of motor
+  //delay(250);
+}
+
+void backward() {
+  digitalWrite(motor1Phase, LOW); //forward
+  digitalWrite(motor2Phase, LOW); //forward
+  analogWrite(motor1PWM, 255); // set speed of motor
+  analogWrite(motor2PWM, 255); // set speed of motor
+  //delay(250);
+}
+
+void left() {
+  digitalWrite(motor1Phase, HIGH); //forward
+  digitalWrite(motor2Phase, HIGH); //forward
+  analogWrite(motor1PWM, 0); // set speed of motor
+  analogWrite(motor2PWM, 255); // set speed of motor
+  //delay(250);
+}
+
+void right() {
+  digitalWrite(motor1Phase, HIGH); //forward
+  digitalWrite(motor2Phase, HIGH); //forward
+  analogWrite(motor1PWM, 255); // set speed of motor
+  analogWrite(motor2PWM, 0); // set speed of motor
+  //delay(250);
+}
+
+void brake() {
+  digitalWrite(motor1Phase, LOW); //forward
+  digitalWrite(motor2Phase, LOW); //forward
+  analogWrite(motor1PWM, 0); // set speed of motor
+  analogWrite(motor2PWM, 0); // set speed of motor
+  //delay(250);
+}
+
+void turn() {
+  digitalWrite(motor1Phase, HIGH); //forward
+  digitalWrite(motor2Phase, LOW); //forward
+  analogWrite(motor1PWM, 255); // set speed of motor
+  analogWrite(motor2PWM, 255); // set speed of motor
+  //delay(250);
+}
