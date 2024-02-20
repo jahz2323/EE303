@@ -9,7 +9,7 @@ bool motor_flag;
 void setupC_Motor()
 { 
   Serial.begin(9700);
-  delay(10000);
+  delay(8000);
 }
 // the loop routine runs over and over again continuously:
 void loopC_Motor()
@@ -17,8 +17,9 @@ void loopC_Motor()
     if ((AnalogValue[2] < 700) && (AnalogValue[0] > 700) && (AnalogValue[4] > 700)) {
       digitalWrite(motor1Phase, HIGH); //forward
       digitalWrite(motor2Phase, HIGH); //forward
-      analogWrite(motor1PWM, 200); // set speed of motor
-      analogWrite(motor2PWM, 200); // set speed of motor
+      analogWrite(motor1PWM, 205); // set speed of motor
+      analogWrite(motor2PWM, 205); // set speed of motor
+     // Serial.println("Forward");
 
     }
     //REACHED STATION
@@ -39,7 +40,7 @@ void loopC_Motor()
       digitalWrite(motor2Phase, HIGH); //forward
       analogWrite(motor1PWM, 90); // set speed of motor
       analogWrite(motor2PWM, 170); // set speed of motor
-     // Serial.println("RIGHT"); // Display motor direction
+    // Serial.println("RIGHT"); // Display motor direction
     }
     else if (AnalogValue[4] < 700) {
       digitalWrite(motor1Phase, HIGH); //forward
@@ -53,7 +54,7 @@ void loopC_Motor()
       digitalWrite(motor2Phase, HIGH); //forward
       analogWrite(motor1PWM, 170); // set speed of motor
       analogWrite(motor2PWM, 90); // set speed of motor
-     // Serial.println("LEFT"); // Display motor direction
+    //  Serial.println("LEFT"); // Display motor direction
     }
     else if (AnalogValue[0] < 700) {
       digitalWrite(motor1Phase, HIGH); //forward
