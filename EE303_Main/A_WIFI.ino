@@ -1,4 +1,3 @@
-// keep A8 free for tone O/P music
 #define BUFSIZE 512
 #include <SLFS.h>
 #include <WiFiClient.h>
