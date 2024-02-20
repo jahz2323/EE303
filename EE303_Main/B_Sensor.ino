@@ -16,11 +16,11 @@ void loopB_Sensor()
   for (int i = 0; i < 5; i++)
   {
     AnalogValue[i] = analogRead(AnalogPin[i]);
-    Serial.print(AnalogValue[i]); // This prints the actual analog reading from the sensors
-  Serial.print("\t"); //tab over on screen
+   // Serial.print(AnalogValue[i]); // This prints the actual analog reading from the sensors
+//  Serial.print("\t"); //tab over on screen
     if (i == 4)
     {
-    Serial.println(""); //carriage return
+   // Serial.println(""); //carriage return
      delay(50); // display new set of readings every 600mS
     }
   }
