@@ -99,7 +99,6 @@ bool test(int dest) {
     }
     if (junctionCount == 4) {
       while (park() == true) {
-
       }
       if (park() == false) {
         POST_position(5);
@@ -181,7 +180,6 @@ bool test(int dest) {
   if ( previous == 0 && current == 1 && destination == 5) {
     if (junctionCount == 1) {
       while (park() == true) {
-
       }
       if (park() == false) {
         POST_position(5);
@@ -254,12 +252,11 @@ bool test(int dest) {
     }
     if (junctionCount == 3) {
       while (park() == true) {
-
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
-    }
+        POST_position(5);
+        return true;
+      }
     }
   }
   ////
@@ -330,12 +327,11 @@ bool test(int dest) {
     }
     if (junctionCount == 4) {
       while (park() == true) {
-
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
-    }
+        POST_position(5);
+        return true;
+      }
     }
   }
   ////
@@ -408,13 +404,12 @@ bool test(int dest) {
       left_angle_turn();
     }
     if (junctionCount == 4) {
-            while (park() == true) {
-
+      while (park() == true) {
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
-    }
+        POST_position(5);
+        return true;
+      }
     }
   }
   ////
@@ -484,13 +479,13 @@ bool test(int dest) {
       left_angle_turn();
     }
     if (junctionCount == 3) {
-            while (park() == true) {
-
+      while (park() == true) {
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
-    }}
+        POST_position(5);
+        return true;
+      }
+    }
   }
   ////
   ////
@@ -560,11 +555,10 @@ bool test(int dest) {
     }
     if (junctionCount == 3) {
       while (park() == true) {
-
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
+        POST_position(5);
+        return true;
       }
     }
   }
@@ -639,11 +633,10 @@ bool test(int dest) {
     }
     if (junctionCount == 4) {
       while (park() == true) {
-
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
+        POST_position(5);
+        return true;
       }
     }
   }
@@ -718,11 +711,10 @@ bool test(int dest) {
     }
     if (junctionCount == 4) {
       while (park() == true) {
-
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
+        POST_position(5);
+        return true;
       }
     }
   }
@@ -794,11 +786,10 @@ bool test(int dest) {
     }
     if (junctionCount == 3) {
       while (park() == true) {
-
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
+        POST_position(5);
+        return true;
       }
     }
   }
@@ -873,11 +864,10 @@ bool test(int dest) {
   if ( previous == 2 && current == 1 && destination == 5) {
     if (junctionCount == 1) {
       while (park() == true) {
-
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
+        POST_position(5);
+        return true;
       }
     }
   }
@@ -952,11 +942,10 @@ bool test(int dest) {
     }
     if (junctionCount == 4) {
       while (park() == true) {
-
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
+        POST_position(5);
+        return true;
       }
     }
   }
@@ -1031,11 +1020,10 @@ bool test(int dest) {
     }
     if (junctionCount == 4) {
       while (park() == true) {
-
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
+        POST_position(5);
+        return true;
       }
     }
   }
@@ -1109,8 +1097,8 @@ bool test(int dest) {
       while (park() == true) {
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
+        POST_position(5);
+        return true;
       }
     }
   }
@@ -1185,11 +1173,10 @@ bool test(int dest) {
   if ( previous == 3 && current == 1 && destination == 5) {
     if (junctionCount == 1) {
       while (park() == true) {
-
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
+        POST_position(5);
+        return true;
       }
     }
   }
@@ -1251,12 +1238,11 @@ bool test(int dest) {
       right_angle_turn();
     }
     if (junctionCount == 3) {
-            while (park() == true) {
-
+      while (park() == true) {
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
+        POST_position(5);
+        return true;
       }
     }
   }
@@ -1328,11 +1314,10 @@ bool test(int dest) {
     }
     if (junctionCount == 4) {
       while (park() == true) {
-
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
+        POST_position(5);
+        return true;
       }
     }
   }
@@ -1395,11 +1380,10 @@ bool test(int dest) {
     }
     if (junctionCount == 3) {
       while (park() == true) {
-
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
+        POST_position(5);
+        return true;
       }
     }
   }
@@ -1477,11 +1461,10 @@ bool test(int dest) {
   if ( previous == 4 && current == 1 && destination == 5) {
     if (junctionCount == 1) {
       while (park() == true) {
-
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
+        POST_position(5);
+        return true;
       }
     }
   }
@@ -1553,11 +1536,10 @@ bool test(int dest) {
     }
     if (junctionCount == 3) {
       while (park() == true) {
-
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
+        POST_position(5);
+        return true;
       }
     }
   }
@@ -1632,11 +1614,10 @@ bool test(int dest) {
     }
     if (junctionCount == 4) {
       while (park() == true) {
-
       }
       if (park() == false) {
-      POST_position(5);
-      return true;
+        POST_position(5);
+        return true;
       }
     }
   }
