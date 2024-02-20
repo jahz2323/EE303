@@ -58,13 +58,13 @@ bool park() {
     park();
   }
 
-  else if (distance > 200 && distance < 700) {
+  else if (distance > 200 && distance < 600) {
     Serial.println(" stopping...");
     analogWrite(motor1PWM, 120); // set speed of motor
     analogWrite(motor2PWM, 120); // set speed of motor
     park();
   }
-  else if (distance > 700) {
+  else if (distance > 600) {
     Serial.println(" FUCKING STOP");
     digitalWrite(motor1Phase, HIGH); //forward
     digitalWrite(motor2Phase, HIGH); //forward
