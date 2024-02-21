@@ -1,0 +1,68 @@
+int GREEN_1 = 34;
+int GREEN_2 = 35;
+int WHITE_1 = 17;
+int RED_1 = 18;
+int RED_2  = 19;
+    
+void SmartDriversetup() {
+  Serial1.begin(9600); /* Define baud rate for serial communication */
+
+}
+
+void SmartDriverloop() {
+  distance = analogRead(A5);
+  Serial.print(distance);
+  Serial.println("   ");
+  Serial.print("\t"); //tab over on screen
+ //boundary();
+}
+
+
+void SMARTbackward() {
+  digitalWrite(motor1Phase, LOW); //forward
+  digitalWrite(motor2Phase, LOW); //forward
+  analogWrite(motor1PWM, 255); // set speed of motor
+  analogWrite(motor2PWM, 255); // set speed of motor
+  delay(350);
+}
+
+void SMARTspin() {
+  digitalWrite(motor1Phase, HIGH); //forward
+  digitalWrite(motor2Phase, LOW); //forward
+  analogWrite(motor1PWM, 255); // set speed of motor
+  analogWrite(motor2PWM, 255); // set speed of motor
+  delay(550);
+}
+ void SMARTstop() {
+  digitalWrite(motor1Phase, LOW); //forward
+  digitalWrite(motor2Phase, LOW); //forward
+  analogWrite(motor1PWM, 0); // set speed of motor
+  analogWrite(motor2PWM, 0); // set speed of motor
+  delay(350);
+}
+
+void boundary (){
+  if (distance >= 0 && distance < 200) {
+     digitalWrite(GREEN_1, HIGH); //forward
+      digitalWrite(GREEN_2, HIGH); //forward
+      digitalWrite(WHITE_1, LOW); //forward
+        digitalWrite(RED_2, LOW); //forward
+    digitalWrite(RED_2, LOW); //forward
+  }
+  else if (distance >= 200 && distance < 600) {
+     digitalWrite(GREEN_1, LOW); //forward
+      digitalWrite(GREEN_2, LOW); //forward
+       digitalWrite(RED_2, LOW); //forward
+    digitalWrite(RED_2, LOW); //forward
+     digitalWrite(WHITE_1, HIGH); //forward
+  }
+  else if (distance > 600) {
+     digitalWrite(GREEN_1, LOW); //forward
+      digitalWrite(GREEN_2, LOW); //forward
+     digitalWrite(WHITE_1, LOW); //forward
+    digitalWrite(RED_2, HIGH); //forward
+    digitalWrite(RED_2, HIGH); //forward
+  SMARTbackward();
+  SMARTspin();
+  }
+}
