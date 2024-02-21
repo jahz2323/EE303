@@ -165,7 +165,7 @@ bool test(int dest) {
       spin_turn();
     }
     if (junctionCount == 1) {
-      left_angle_turn();
+      right_angle_turn();
     }
     if (junctionCount == 2) {
       previous = 1;
