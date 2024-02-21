@@ -1,13 +1,16 @@
 #define LED GREEN_LED
 char data_received;
-    
+int distance = 0;
 void setup() {
   Serial1.begin(9600); /* Define baud rate for serial communication */
   pinMode(LED, OUTPUT);
 }
 
 void loop() {
-
+   distance = analogRead(A5);
+//  Serial.print(distance);
+//  Serial.println("   ");
+//  Serial.print("\t"); //tab over on screen
   if (Serial1.available())  /* If data is available on serial port */
   {
 
@@ -22,18 +25,22 @@ void loop() {
     else if (data_received == '3')
     {
       forward();
+      boundary();
     }
     else if (data_received == '4')
     {
       backward();
+      boundary();
     }
     else if (data_received == '5')
     {
       left();
+      boundary();
     }
     else if (data_received == '6')
     {
       right();
+      boundary();
     }
     else if (data_received == '7')
     {
@@ -42,6 +49,10 @@ void loop() {
       else if (data_received == '8')
     {
       turn();
+      boundary();
+    }
+    else{
+      SMARTstop();
     }
 
   }
