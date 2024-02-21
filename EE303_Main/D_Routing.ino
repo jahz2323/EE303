@@ -70,7 +70,7 @@ bool test(int dest) {
   }
   if ( previous == 6 && current == 0 && destination == 3) {
     if (junctionCount == 4) {
-      previous = 2;
+      previous = 0;
       current = 3;
       junctionCount = 0;
       POST_position(3);
