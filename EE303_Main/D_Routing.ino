@@ -167,7 +167,7 @@ bool test(int dest) {
     if (junctionCount == 1) {
       right_angle_turn();
     }
-    if (junctionCount == 2) {
+    if (junctionCount == 3) {
       previous = 1;
       current = 4;
       junctionCount = 0;
