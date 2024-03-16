@@ -37,7 +37,7 @@ void post() {
   if ( previous == 6) {
     POST_position(0);
     delay(500);
-    destination = Read_Response();
+    destination = Destination();
   }
 }
 
@@ -53,7 +53,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -64,7 +64,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -75,7 +75,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -89,7 +89,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -122,7 +122,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(0);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -139,7 +139,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -156,7 +156,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -173,7 +173,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -200,7 +200,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(0);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -217,7 +217,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -228,7 +228,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -242,7 +242,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -275,7 +275,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(0);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -292,7 +292,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -306,7 +306,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -320,7 +320,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -353,7 +353,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(0);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -370,7 +370,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -384,7 +384,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -398,7 +398,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -434,7 +434,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -448,7 +448,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -462,7 +462,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -473,7 +473,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -506,7 +506,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(0);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -523,7 +523,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -534,7 +534,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -548,7 +548,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -581,7 +581,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(0);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -598,7 +598,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -612,7 +612,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -626,7 +626,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -659,7 +659,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(0);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -676,7 +676,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -690,7 +690,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -704,7 +704,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -740,7 +740,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -754,7 +754,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -768,7 +768,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -779,7 +779,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -815,7 +815,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(0);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -832,7 +832,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -849,7 +849,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -866,7 +866,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -893,7 +893,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(0);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -910,7 +910,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -924,7 +924,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -938,7 +938,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -971,7 +971,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(0);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -988,7 +988,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1002,7 +1002,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1016,7 +1016,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1052,7 +1052,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1066,7 +1066,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1080,7 +1080,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1091,7 +1091,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1127,7 +1127,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(0);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1144,7 +1144,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1161,7 +1161,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1178,7 +1178,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1202,7 +1202,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(0);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1216,7 +1216,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1230,7 +1230,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1241,7 +1241,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1271,7 +1271,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(0);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1288,7 +1288,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1302,7 +1302,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1316,7 +1316,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1349,7 +1349,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1360,7 +1360,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1371,7 +1371,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1385,7 +1385,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1418,7 +1418,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(0);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1435,7 +1435,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1452,7 +1452,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1469,7 +1469,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1496,7 +1496,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(0);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1513,7 +1513,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1524,7 +1524,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(3);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1538,7 +1538,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1571,7 +1571,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(0);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1588,7 +1588,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(1);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1602,7 +1602,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(2);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
@@ -1616,7 +1616,7 @@ bool test(int dest) {
       junctionCount = 0;
       POST_position(4);
       delay(500);
-      destination = Read_Response();
+      destination = Destination();
       return true;
     }
   }
