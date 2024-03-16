@@ -60,7 +60,7 @@ void POST_position(int value) {
 }
 
 
-int Destiantion() {
+int Destination() {
   int destination;
   String read = readResponse();
  
