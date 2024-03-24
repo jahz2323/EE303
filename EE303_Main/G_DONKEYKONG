@@ -102,9 +102,9 @@ int buzzer = 31;
 // so -4 means a dotted quarter note, that is, a quarter plus an eighteenth!!
 int melody[] = {
 
-  // Mii Channel theme
-  // Score available at https://musescore.com/user/16403456/scores/4984153
-  // Uploaded by Catalina Andrade
+  // DonkeyKong jungle swing
+  // 
+  // Uploaded by Jahz2323 
    NOTE_A2,6, NOTE_A2,6, NOTE_E2,6, NOTE_E2,6, NOTE_F2,6,  
    NOTE_F2,12, NOTE_G2,6, NOTE_F2,16,NOTE_G2,6,
    NOTE_A2,6, NOTE_A2,6, NOTE_E2,6, NOTE_E2,6, NOTE_F2,6,
