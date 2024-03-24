@@ -14,7 +14,8 @@ void LoopRoute() {
 
 void junction() {
   junctionCount++;
-  if (junctionCount == 1 && previous == 6)  {
+  if (junctionCount == 1 && previous == 6)  // FOR INITAL CASE , BEFORE 0 AND START ROUTE 
+  {
     post();
   }
   else {
