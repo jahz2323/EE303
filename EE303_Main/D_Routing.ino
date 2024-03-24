@@ -4,7 +4,7 @@ int junctionCount = 0;
 int destination = 111;
 int distance = 0;
 
-void setupdecehlo() {
+void SetupRoute() {
   Serial.begin(9600);
 }
 
