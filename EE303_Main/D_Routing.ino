@@ -1,4 +1,4 @@
-int previous = 6;
+int previous = 6; // NULL POSITION, when mobot is before 0 
 int current = 0;
 int junctionCount = 0;
 int destination = 111;
