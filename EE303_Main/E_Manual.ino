@@ -46,11 +46,7 @@ bool park() {
   Serial.print(distance);
   Serial.println("   ");
   Serial.print("\t"); //tab over on screen
-  //  digitalWrite(motor1Phase, HIGH); //forward
-  //  digitalWrite(motor2Phase, HIGH); //forward
-  //  analogWrite(motor1PWM, 185); // set speed of motor
-  //  analogWrite(motor2PWM, 185); // set speed of motor
-  //  delay(4000);
+ 
   if (distance >= 0 && distance < 200) {
     Serial.println(" Moving....");
     analogWrite(motor1PWM, 230); // set speed of motor
