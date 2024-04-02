@@ -52,7 +52,7 @@ bool park() {
   //  analogWrite(motor2PWM, 185); // set speed of motor
   //  delay(4000);
   if (distance >= 0 && distance < 200) {
-    Serial.println(" Moving....);
+    Serial.println(" Moving....");
     analogWrite(motor1PWM, 230); // set speed of motor
     analogWrite(motor2PWM, 230); // set speed of motor
     park();
