@@ -105,6 +105,8 @@ int melody[] = {
   // DonkeyKong jungle swing
   // 
   // Uploaded by Jahz2323 
+  // template code referenced from https://github.com/robsoncouto/arduino-songs/commits?author=robsoncouto
+  // robsoncouto 
    NOTE_A2,6, NOTE_A2,6, NOTE_E2,6, NOTE_E2,6, NOTE_F2,6,  
    NOTE_F2,12, NOTE_G2,6, NOTE_F2,16,NOTE_G2,6,
    NOTE_A2,6, NOTE_A2,6, NOTE_E2,6, NOTE_E2,6, NOTE_F2,6,
